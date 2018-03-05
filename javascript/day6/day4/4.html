@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	 //编写一个函数 ：实现计算任意一个数的各个位数的和 
+	/*function fnSum (num){
+		var sum=0;
+		while (num !=0){
+			var digit =num%10;
+			sum +=digit;
+			num = parseInt(num/10);
+		}
+		return sum;
+	}
+	fnSum(25);
+	alert(fnSum(25));*/
+	//计算任意一个数字的位数
+	var num =prompt("请输入一个数字");
+	var count=0;
+	temp=num;
+	while (num!=0){
+		var digit =num%10;
+		count++;
+		num=parseInt(num/10);
+		
+	}
+	alert(temp+"是"+count+"位数")
+</script>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+	*{
+			margin:0;
+			padding: 0;
+		}
+		#ball{
+			width: 30px;
+			height: 30px;
+			background: skyblue;
+			position: absolute;
+			left: 0;
+			top: 300px;
+			border-radius:50% ;
+		}
+	</style>
+	<body>
+		<input type="button" value="飞起来" id="btn" />
+		<div id="ball"></div>
+	</body>
+</html>
+<script> 
+	var btn = document.getElementById("btn");
+	var ball = document.getElementById("ball");
+	var speedx = 7;
+	var speedy = -15;
+	var timer =null;
+	
+	btn.onclick = function(){
+		timer = setInterval(function(){
+			ball.style.left = ball.offsetLeft + speedx + "px";
+			ball.style.top = ball.offsetTop + speedy++ + "px";
+			
+			if(ball.offsetTop > window.innerHeight - ball.offsetHeight){
+			   ball.style.top = window.innerHeight - ball.offsetHeight +"px";
+			   speedy *=-0.6;
+			   speedx--;
+			   if(speedx < 0){
+			   	speedx = 0;
+			   	clearInterval(timer);
+			   }
+			}
+		},30)
+	}
+</script>

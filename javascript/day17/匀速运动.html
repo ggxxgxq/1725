@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			position: absolute;
+			left: 0;
+			top: 100px;
+		}
+		#btn{
+			margin: 50px;
+		}
+	</style>
+	</head>
+	<body>
+		<input type="button" value="运动" id="btn" />
+		<div id="box"></div>
+	</body>
+</html>
+<script>
+	var oBtn =document.getElementById("btn");
+	var oDiv =document.getElementById("box");
+	var timer =null;
+	oBtn.onclick=function(){
+		startMove();
+	}
+	function startMove(){
+		timer=setInterval(function(){
+			if(oDiv.offsetLeft ==300){
+				clearInterval(timer);
+			}else{				
+			oDiv.style.left =oDiv.offsetLeft+5+"px";
+			}
+		},30)
+	}
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body  bgcolor="#000">
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	window.onload=function(){
+		setInterval(function(){
+		var oImg = document.createElement("img");
+		oImg.src="star.gif";
+		document.body.appendChild(oImg);
+		oImg.style.position="absolute";
+		oImg.style.left=rand(0,1000)+"px";
+		oImg.style.top=rand(0,1000)+"px";
+		oImg.style.width=oImg.style.height=rand(10,60)+"px";
+			oImg.onclick=function(){
+				//document.body.removeChild(oImg);
+				this.remove(oImg);
+			}
+		},1000)
+	}
+</script>

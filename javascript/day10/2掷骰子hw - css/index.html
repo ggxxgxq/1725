@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>动态图片切换</title>
+        <meta charset="UTF-8">
+        <link href="css/style.css" rel="stylesheet">
+        
+    </head>
+    <body>
+        <!-- 游戏区域 -->
+        <div id="container">
+            <img src="images/dice_1.png" id="dice" alt="">
+        </div>
+        <div id="command">
+            <input type="button" onclick="shake()" value="摇一摇">
+        </div>
+    </body>
+</html>
+<script src="../out.js"></script>
+<script>
+    //点击摇一摇  换gif图片
+    //得到一个随机时间   600---5000
+    //延时随机时间后  得到一个1--6之间的随机图片
+    //当timers时间换图时    阻止按钮点击  
+    //  一次操作后，才可以实现继续 摇骰子
+    var flag=true;
+    function shake(){
+    	flag=false;
+    	$id("dice").src="images/diceDynamic.gif";
+    	setTimeout(function(){
+    		$id("dice").src="images/dice_"+rand(1,6)+".png";
+    		flag=true;
+    	},rand(500,3000))
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin:0;
+				padding:0;
+			}
+		</style>
+	</head>
+	<body>
+		<p>注册页面：</p>
+		<div>
+			<span>用户名：</span><input type="text" id = "y"/><br>
+			<span>密码：</span><input type="text" id = "m"/><br>
+			<input type="button" value = "注册" id = "register"/>
+		</div>
+	</body>
+</html>
+<script src = "public.js"></script>
+<script src = ""></script>
+<script>
+	function $(id){
+		return document.getElementById(id)
+	}
+	$("register").onclick = function(){
+		var uname = $("y").value;
+		var upwd = $("m").value;
+		document.cookie = "username=" + uname;
+		document.cookie = "userpwd=" + upwd;
+		alert("注册成功");
+		location.href = "登录页面.html"
+	}
+</script>

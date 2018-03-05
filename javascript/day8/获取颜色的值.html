@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	// "0123456789abcdef"
+	//在字符串中随机获取六个字符 组成一个颜色 
+	// 随机六个字符 ： 0--15 
+	function getColor(){
+		var str="0123456789abcdef";
+		var color="#"
+		for(var i=0;i<6;i++){
+			color +=str.charAt( rand(0,15) )
+		}
+		return color
+	}
+	//alert(getColor())
+	function getColor1(){
+		var color="#";
+		for(var i=1;i<=3;i++){
+			var ch=rand(0,255).toString(16);
+			ch= ch.length < 2? "0"+ch : ch;
+			color += ch;
+		}
+		return color;
+	}
+	for( var i = 1 ; i <= 10 ; i++ ){
+		console.log( getColor1() );
+	}
+</script>

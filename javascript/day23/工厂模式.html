@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function animal(name,age){
+		//备料：创建对象
+		var obj =new Object();
+		//为对象添加属性和方法
+		obj.name =name;
+		obj.age=age;
+		obj.running=function (){
+			return "奔跑";
+		}
+		return obj
+	}
+	function stu(name,tel ){
+		var obj =new Object();
+		obj.name =name;
+		obj.tel=tel
+		return obj;
+	}
+	var d = animal("猫","3");
+	//var c = animal("狗","5");
+	//console.log(d.age)
+	//console.log(d.running())
+	var s = stu("小明","123456");
+	alert(d instanceof Object);//true
+	alert(s instanceof Object)//true
+	//无法判断一个对象的的构造函数
+</script>

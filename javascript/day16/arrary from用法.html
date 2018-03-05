@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+		</ul>
+	</body>
+</html>
+<script>
+	/*var list =document.getElementsByTagName("li");
+	//将list转成数组
+	list = Array.from(list);
+	list.forEach( (item) => {console.log(item.innerHTML)} )*/
+	//讲对象转成一个数组  对象的键必须为数组的下标  0 1 2 3  必须给一个length
+	var arr= Array.from({
+		"0":1,
+		"1":2,
+		"2":3,
+	    "length":3
+	})
+	//console.log(arr)
+	
+	//回忆map函数   遍历数组  操作数组  返回数组
+	var arr =[3,2,4,6]
+	var newArr =arr.map( (item) =>{
+		return item*2
+	})
+	//console.log(newArr)
+	
+	//Array.from  第二个参数
+	var newArr =Array.from({
+		"0":1,
+		"1":2,
+		"2":3,
+		"length":3
+	}, (item) =>{//item代表的是对象转成数组后的数组中的每一项
+		return item*2
+	})
+	//console.log(newArr)
+	//写一个函数 ： 不用循环方式  生成一个具有m个n的数组
+	function fn(m,n){
+		var arr =Array.from({"length":m},
+		() =>{return n})
+		return arr;
+	}
+	alert(fn(6,1))
+</script>

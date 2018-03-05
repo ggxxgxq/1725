@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+		</ul>
+	</body>
+</html>
+<script src="../out.js"></script>
+<script type="text/javascript">
+	//this : 指向方法的调用者  或  事件的触发者  
+	//为五个li添加背景色
+	$.fn.extend({
+		setColor : function(){
+			//this指向方法的调用者 jq对象
+			//$(this)是指事件的触发者
+		    this.css("background","palegreen")
+		},
+		setColor1 : function(){
+			this.each(function(){
+				$(this).css("background",getColor())
+			})
+		},
+		enter : function(opts){
+			this.mouseenter(function(){
+				//console.log($(this))
+				var defaults={
+					"color":"red",
+					"size":15
+				}
+				var setting = $.extend( defaults,opts )
+				color = $(this).css("backgroundColor")
+				$(this).css({"fontSize":setting.size,"background":setting.color})
+			})
+		},
+		leave : function(){
+			this.mouseleave(function(){
+				$(this).css({"fontSize":20,"background":color})
+			})
+		}
+	})
+	//$("li").setColor()
+	$("li").setColor1()
+	$("li").enter({"color":"blue"})
+	$("li").leave()
+</script>

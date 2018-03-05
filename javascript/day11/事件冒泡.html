@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d" style="width:100px;height:100px;border:1px solid red;"></div>
+	</body>
+</html>
+<script>
+	var oDiv =document.getElementById("d");
+	oDiv.onclick=function(e){
+		var e = e ||event;
+		e.stopPropagation ? e.stopPropagation() : e.cancelBubble = true;
+		alert("div被点击了");
+	}
+	document.body.onclick=function(){
+		alert("body被点击了");
+	}
+	document.onclick=function(){
+		alert("document被点击了");
+	}
+	window.onclick=function(){
+		alert("window被点击了");
+	}
+</script>

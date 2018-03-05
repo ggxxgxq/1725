@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+				#bg{
+					background: url(img/bg.jpg)  no-repeat;
+					background-size: cover;
+					width: 100%;
+					height: 100%;
+					position: fixed;
+				}
+				img {
+					width: 18px;
+					height: 18px;
+					position: absolute;	
+				}
+		</style>
+
+	</head>
+
+	<body>
+		<div id="bg">
+			
+		</div>	 
+	</body>
+
+</html>
+<script src="../../../out.js"></script>
+<script src="sport6.js"></script>
+<script>
+	/*
+	构造函数 ：Particle
+	属性 ：  img  动态创建
+	功能 ：  入口 init 创建图片           fly
+	 */
+	window.onload = function(){
+		for(var i=0;i<100;i++){		
+			new Particle().init();
+		}
+	}
+	
+	function Particle(){
+		this.img = createEle("img");
+		this.init = function(){
+			document.body.appendChild(this.img);
+			this.img.src ="img/1.jpg";
+			this.img.style.left = rand(0,window.innerWidth-18) + "px";
+			this.img.style.top = rand(0,window.innerHeight-18) + "px";
+			this.fly()
+			//return this;
+		}
+		this.fly = function(){
+			//var that =this;
+			this.speedx = rand(-5,5);
+			this.speedy = rand(-5,5);
+			
+			this.timer =setInterval(function(){
+				this.img.style.left = this.img.offsetLeft + this.speedx +"px";
+				this.img.style.top = this.img.offsetTop + this.speedy + "px";
+			}.bind(this),2000)
+		}
+	}
+</script>

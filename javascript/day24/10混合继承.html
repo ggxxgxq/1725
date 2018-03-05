@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*
+	 混合继承练习：
+	 定义一个Human构造函数，  属性---hobby   方法---行走、吃饭
+             定义一个Student构造函数， 属性--name  age hobby  方法--- 学习  行走、吃饭
+            要求：  Student继承Human  混合继承实现  
+	 */
+	function Human(hobby){
+		this.hobby =hobby;
+	}
+		Human.prototype.walk =function(){
+			console.log("行走")
+		}
+		Human.prototype.eat =function(){
+			console.log("吃饭")
+		}
+	function Student(hobby,name,score){
+		Human.call(this,hobby);
+		this.name = name;
+		this.score = score;
+		this.study = function(){
+			console.log("xuexi")
+		}
+	}
+	/*Student.prototype.study=function(){
+		console.log("学习")
+	}*/
+	Student.prototype =new Human();
+	var s =new Student("睡觉","小白","199");
+	console.log(s)
+</script>

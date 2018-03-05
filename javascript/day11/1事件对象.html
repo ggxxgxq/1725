@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		img{
+			position:absolute;
+		}
+		body{
+			height:1000px;
+		}
+	</style>
+	</head>
+	<body>
+		<img src="1.jpg" alt="" id="img1" width="100"/>
+	</body>
+</html>
+<script>
+	/*document.onkeyup=function(e){//代表一个事件对象
+		var e = e || event;
+		alert(e);
+	}*/
+	document.onmousemove=function(e){
+		var Img=document.getElementById("img1");
+		Img.style.left =e.pageX+"PX";
+		Img.style.top =e.pageY+"PX";
+	}
+</script>

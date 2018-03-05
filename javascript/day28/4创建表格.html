@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		行：<input type="text" id="row"/>
+		列：<input type="text" id="col"/>
+		<input type="button" value="创建表格" id="btn"/>
+		<div id="box"></div>
+	</body>
+</html>
+<script src="../out.js"></script>
+<script>
+	$("#btn").click(function(){
+		$("#box").html("")
+		$row = $("#row").val();
+		$col = $("#col").val();
+		$tab =$("<table border='1' width='500'>")
+		for(var i=0 ; i<$row; i++){
+			$tr =$("<tr>");
+			for(var j=0; j<$col;j++){
+				$td = $("<td>"+rand(1,100)+"</td>")
+				$td.css("background",getColor())
+				$td.appendTo($tr);
+			}
+			$endtd = $("<td><a href='javascript:;' class='del'>删除</a></td>")
+			$endtd.appendTo( $tr )
+			$tr.appendTo( $tab );
+		  $tab.appendTo( $("#box") )
+		}
+		$(".del").click(function(){
+			if(confirm("确定要删除吗？")){				
+			    $(this).parent().parent().remove()
+			}
+		})
+	})
+</script>

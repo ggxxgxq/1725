@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #box {
+            width: 1000px;
+            height: 600px;
+            background: #000000;
+            border: 5px solid red;
+            margin: 20px auto;
+            position: relative;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+</body>
+
+</html>
+<script src="../../out.js"></script>
+<script>
+   /*
+           构造函数snowDrag
+           属性   创建雪花
+           功能    雪花运动  消失  出现
+    */
+   window.onload=function(){
+	   	setInterval(function(){   		
+			new snowDrag().init().move();		
+	   	},500)
+		
+   }
+   function snowDrag(){
+   	  var that =this;
+   	   this.img = createEle("img");
+   	   this.div = document.getElementById("box");
+   	   this.init =function(){
+   	   	  this.img.src = "img/snow.png";
+   	      this.img.style.width =this.img.style.height = rand(20,50)+"px";
+   	   	  this.img.style.position="absolute";
+   	   	  this.img.style.left = rand(0,1000-this.img.offsetWidth)+"px";
+   	   	  this.img.style.top = -this.img.offsetHeight+"px";
+   	      this.div.appendChild(this.img);
+   	      return this;  
+   	      
+   	     /*startMove(this.img,{top:this.div.offsetHeight},function(){
+   	     	that.img.remove();
+   	     })*/
+   	   }
+   	   this.move =function(){
+   	   	  this.speedx = -rand(1,5)
+   	   	  this.speedy = rand(1,5);
+   	   	  this.timer =setInterval(function(){
+   	   	  	    this.img.style.left = this.img.offsetLeft +this.speedx +"px";
+   	   	  	    this.img.style.top =  this.img.offsetTop +this.speedy + "px";
+   	   	  	    if(this.img.offsetLeft<-this.img.offsetWidth || this.img.offsetTop > this.div.offsetHeight){
+   	   	  	    	clearInterval(this.timer);
+   	   	  	    	this.img.remove()
+   	   	  	    }
+   	   	  }.bind(this),30)
+   	   }
+   }
+ 
+</script>

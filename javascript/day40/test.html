@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="box">
+			<a>a</a>
+			<span>b</span> 
+			<p>c</p>
+		</div>
+	</body>
+</html>
+<script type="text/javascript" src="jquery-1.11.1.js"></script>
+<script type="text/javascript" src="../out.js">	
+</script>
+<script>
+	/*完成一个函数，接收数组作为参数，
+	数组元素为整数或者数组，数组元素包含整数和数组，函数返回扁平化后的数组。*/
+	/*var arr = [1,2,[3,5,68],7,4]
+	var brr=[];
+	function fn(obj){
+		for(var i=0;i<obj.length;i++){
+			if( typeof(obj[i])=="object"){
+				fn(obj[i])
+			}else{
+				brr.push(obj[i])
+			}
+		}
+	}*/
+	//fn(arr)
+	//console.log(brr)
+	/*定义一个函数 createel( ) ,参数为一个整数，函数功能为：在页面中传参数个数的div ,
+	 * 并设置div 高度为50px , 背景色为“#900”margin 值为5px .*/
+	function createel(n){
+		for(var i=0;i<n;i++){
+			var oDiv = $("<div></div>")
+			oDiv.css({"background":"#900","height":50,"margin":5})
+			$("body").append(oDiv)
+		}
+	}
+	 //createel(3)
+	 /*
+	  已知页面结构<div id="box"><a>a</a><span>b</span> <p>c</p></div>，给div绑定一个click事件，
+	  在事件触发时判断点击的元素是否为span，如果是则弹出对话框；
+	  */
+	/* $("#box").on("click","a",function(){
+	 	alert("")
+	 })*/
+	/*$id("box").onclick=function(e){
+		var e = e || event;
+		var target = e.target || e.srcElement;
+		if( target.nodeName =="A"){
+		    alert("")
+		}
+	}*/
+	/*
+	  这样一个数组，var arr=['a','bc','d','d','e','a','b','f','g']; 请在数组原型上添加一个方法去掉重复数据；
+	 */
+	var arr=['a','bc','d','d','e','a','b','f','g']
+	Array.prototype.remove=function(){
+		var brr=[];
+		for(var i=0;i<this.length;i++){
+			if( brr.indexOf(this[i]) == -1){
+				brr.push(this[i])
+			}
+		}
+		return brr;
+	}
+	Array.prototype.quchong = function(){
+		return [...new Set(this)]
+	}
+	Array.prototype.norepeat=function(){
+		var brr=[];
+		for(var i in this){
+			var flag=true;  //存在		
+			for(var j in brr){
+				if( this[i]==brr[j] ){
+					flag=false;
+				}
+			}
+			if( flag ){
+				brr.push(this[i] )
+			}
+		}
+		return brr;
+	}
+	//console.log( arr.norepeat() )
+	//console.log(arr.quchong())
+	//console.log(arr.remove())
+</script>

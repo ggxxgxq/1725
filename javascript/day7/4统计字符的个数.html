@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	
+	//2、	统计一个字符串中大写字母  小写字母  
+	//    数字以及特殊字符从个数”xdrKJI566$%^”  编程实现
+	function getCode(str){
+		var Bletter=0,Sletter=0,Num=0,Other=0;
+		for(var i=0;i<str.length;i++){
+			var ch=str.charAt(i);
+			if(ch>="a" &&ch<="z"){
+				Sletter++;
+			}else if(ch>="A" &&ch<="Z"){
+				Bletter++;
+			}else if(ch>="0"&&ch<="9"){
+				Num++;
+			}else{
+				Other++;
+			}
+		}
+		console.log( "大写字母：" + Bletter );
+		console.log( "小写字母：" + Sletter );
+		console.log( "数字：" + Num );
+		console.log( "特殊字符：" + Other );
+	}
+	getCode( "licASDwnwer323$$$334" );
+</script>

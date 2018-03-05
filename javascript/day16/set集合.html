@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*var set =new Set();
+	set.add(100).add(200).add(300)
+	console.log(set)
+    var set =new Set([1,24,"34",5])
+    console.log(set) */
+   //使用set集合为数组去重 
+// var arr=[12,12,34,3,2,3,3,3];
+//     arr =Array.from(new Set(arr))
+//     console.log(arr);
+  
+     //console.log(Array.from(new Set([12,12,34,3,2,3,3,3])))
+     console.log(...new Set([12,12,34,3,2,3,3,3]))
+     
+     //集合中的方法
+     var set =new Set([12,12,34,3,2,3,3,3]);
+     //alert(set.size)
+     //set.delete(3)
+     //set.clear()
+     //console.log(set)
+     set.forEach( (item) =>{console.log(item)})
+</script>

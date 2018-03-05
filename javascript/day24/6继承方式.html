@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Father(){
+		this.money=99999;
+		this.liaomei =function(){
+			console.log("撩妹")
+		}
+	}
+	//console.log(Father())
+	function Son(){
+		this.parent = Father;
+		this.parent();//调用父类函数
+		delete this.parent //删除属性
+	}
+	var s =new Son();
+	console.log(s)
+</script>

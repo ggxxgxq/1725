@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Iphone5(price,color,size,memsize){
+		this.price = price;
+		this.color = color;
+		this.size = size;
+		this.memsize = memsize;
+		this.sendMessage =function(){
+			console.log("发信息")
+		}
+		this.call =function(){
+			console.log("打电话")
+		}
+	}
+	function Iphone6(price,color,size,memsize){
+		Iphone5.apply(this,[price,color,size,memsize])
+		this.music =function(){
+			console.log("播放音乐")
+		}
+	}
+	var p6 = new Iphone6("123","white","5.5","64")
+	p6.call()
+	p6.music();
+	console.log(p6.price,p6.color);
+	console.log(p6)
+</script>

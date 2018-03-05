@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	//随机抽学生   定义一个含有10个学生姓名的数组，随机抽取五个不重名的学生存放到新数组中并打印出来
+	function Print(arr){	
+	    var arrNewName=[];
+		for(var i=0;i<5;i++){
+			var index=rand(0,9);
+			if(arrNewName.indexOf(arr[index])== -1){
+				arrNewName.push(arr[index]);
+			}else{
+				i--;
+			}
+		}
+			return arrNewName
+	}
+	var arrName=["张三","李四","王五","马一","张三","李二","王五","小明","小红","小帅"]
+	alert(Print(arrName));
+	
+	
+	
+</script>

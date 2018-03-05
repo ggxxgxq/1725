@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="创建" id="btn" />
+		<ul id="u">
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+		</ul>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	$id("btn").onclick =function(){
+		var oli =createEle("li");
+		oli.innerHTML="加一个孩子";
+		$id("u").insertBefore(oli,$id("u").children[1])
+	}
+</script>

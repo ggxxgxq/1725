@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function fn(){
+		
+	}
+	fn.prototype.name="小白";
+	fn.prototype.age="12";
+	fn.prototype.eat =function(){
+		this.name.eat+"在吃";
+	}
+	var a =new fn();
+	var b =new fn();
+	alert(a.eat()==b.eat())
+	console.log(a.name,b.name)
+</script>

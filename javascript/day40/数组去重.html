@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	arr =[1,23,45,7,23,6,7,1]
+	Array.prototype.removerepeat = function(){
+		var newarr= [];
+		for(var i=0;i<this.length;i++){
+			if( newarr.indexOf( this[i]) ==-1){
+				newarr.push( this[i] )
+			}
+		}
+		return newarr;
+	}
+	//console.log(arr.removerepeat())
+	
+	//最短去重
+	var newarr = [...new Set(arr)]
+    console.log(newarr)	
+</script>

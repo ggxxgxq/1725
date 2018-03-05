@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//定义一个函数 功能实现 显示 年 月 日  时分 秒
+	function DateToString(sign){
+		sign=sign || "-";
+		var d = new Date();
+		var y = d.getFullYear()
+		var m = toTwo(d.getMonth()+1)
+		var _date =toTwo( d.getDate() )
+		var h = toTwo(d.getHours() )
+		var min = toTwo(d.getMinutes() )
+		var s = toTwo(d.getSeconds() )
+		return y+sign+m+sign+_date+" "+h+":"+min+":"+s;
+	}
+	function toTwo(val){
+		return val<10 ? "0"+val: val;
+	}
+	alert(DateToString());
+</script>

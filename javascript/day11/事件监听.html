@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	 999
+	</body>
+</html>
+<script>
+	/*document.addEventListener("click",function(e){
+	  var e = e || event;
+	  alert(e);
+	})*/
+	document.body.addEventListener("click",function(){
+		alert("body被点击了")
+	},true)
+	document.addEventListener("click",function(){
+		alert("document被点击了")
+	},true)
+	window.addEventListener("click",function(){
+		alert("window被点击了")
+	},true)
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function fnPush(){
+		var arr=[12,12]
+		arr.push(3,5,7,9);
+		alert(arr);
+	}
+	//fnPush()
+	function fnPop(){
+		var arr=[12,12,13]
+		arr.pop();//不加参数，删除最后一位数
+		alert(arr);
+	}
+	//fnPop()
+	function fnshift(){
+		var arr=[12,12,13]
+		//arr.shift();  //删除数组中的第一个数
+		var res=arr.shift();
+		//alert(arr);
+	    alert(res);
+	}
+	//fnshift()
+	function fnUnshift(){
+		var arr = [12,34];
+		arr.unshift(90,89,78);//在数组第一个数前添加
+		alert( arr );
+	}
+	//fnUnshift()
+	function fnSlice(){
+		var arr = [12,34,56,67];
+		var res=arr.slice(1,3);//不会改变原数组的值
+		alert(res)
+	}
+	//fnSlice() 
+	function fnSplice(){
+		var arr = [23,12,45,34,6,9];
+		//var res = arr.splice(2);//只有一个参数表示删除从开始下标到数组最后的数据
+		// var res = arr.splice(2,3);//有两个参数 删除从开始位置 指定长度的数据
+		var res = arr.splice(1,2,222,888);
+		//var res = arr.splice(1,0,222);//[23,222,12,45,34,6,9]
+		console.log(arr); //
+		console.log(res);//
+		
+	}
+	fnSplice()
+</script>

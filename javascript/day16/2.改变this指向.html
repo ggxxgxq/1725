@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d"></div>
+	</body>
+</html>
+<script>
+	var oDiv = document.getElementById("d");
+	document.onclick=function(){
+		//alert(this); document指向
+	 	oDiv.style.background="blue";
+	 	oDiv.style.width=oDiv.style.height="100px";
+	 	//alert(this);
+	}.bind(oDiv);
+	window.setTimeout(function(){	
+		this.style.display ="none";
+		//alert(this)
+	}.bind(oDiv),1000);
+	
+	function fn(){
+		alert(this)  //window
+	}
+	fn.call(document);   //改变匿名函数  document 
+</script>

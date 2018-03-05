@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			span{
+				width:80px;
+				height: 10px;
+				display: inline-block;
+				background: deeppink;
+				margin-right: 3px;
+				font-size: 18px;
+				text-align: center;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="txt" />
+		<div id="box" style="margin-top: 4px;">
+			<span id="r">弱</span>
+			<span id="z">中</span>
+			<span id="q">强</span>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+ 	/*
+ 	 1、一类字符 是   弱         纯数字  弱              纯字母  弱                  纯 特殊字符 弱
+ 	 2、两类字符 是   中   
+ 	 3、三类字符      强
+ 	*/	 
+	 var word =document.getElementById("txt");
+	 		var q =document.getElementById("q");
+	 	    var r =document.getElementById("r");
+	 	    var z =document.getElementById("z");
+	 word.onkeyup =function(){
+	    var str= word.value;
+	 	var regNum =/\d+/;
+	 	var regChar =/[a-z]+/i;
+	 	var regOth =/\W+/;
+	 	var _regNum =/^\d+$/;
+	 	var _regChar =/^[a-z]+$/i;
+	 	var _regOth =/^\W+$/;
+	 	    if(str.length<5){
+		 	    q.style.background ="deeppink";
+		 		z.style.background ="deeppink";
+		 		r.style.background ="deeppink";
+		 		return;
+	 	    }
+	 		q.style.background ="deeppink";
+	 		z.style.background ="deeppink";
+	 		r.style.background ="deeppink";
+	 	    
+	 	if(regNum.test(str) && regChar.test(str) && regOth.test(str) ){
+
+	 		q.style.background ="orange";
+	 	}else if(_regNum.test(str) || _regChar.test(str) || _regOth.test(str)){
+	 	
+	 		r.style.background ="orange";
+	 	}else{
+	 		
+	 		z.style.background ="orange";
+	 	}
+	 }
+</script>

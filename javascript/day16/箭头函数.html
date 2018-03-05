@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var fn =() =>{ alert("hello")};  //无参数 无返回值
+	var fn =(a,b) =>{ alert(a+b) }   //有参数  无返回值
+	var fn =(a,b) =>{ return a>b ? a :b }   //有参数   返回值
+	//alert( fn(2,6) );
+	setTimeout(() =>{
+		console.log(1);
+	},1000)
+	
+	var arr=[12,24,45,46,67];
+	var newArr=arr.filter( (item) =>{
+		return item>33;
+	})
+	//alert(newArr);
+	document.onclick=() =>{
+		alert("hello");
+	}
+</script>

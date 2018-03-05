@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			div{
+				width:200px;
+				height:200px;
+				background:#ccc;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button"  id="btn"  value="改变" />
+		<div id="d" >gary</div>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	//如下图，点击按钮  实现随机改变div的颜色，五种不同的颜色随机切换，同时颜色值显示到div中
+	var oBtn=document.getElementById("btn")
+	var oDiv=document.getElementById("d")
+	oBtn.onclick = function(){	
+		var arr=["pink","skyblue","gold","red","yellow"]
+		    var index=rand(0,4);
+			oDiv.style.backgroundColor = arr[index];
+			oDiv.innerHTML=arr[index];	
+	}
+</script>

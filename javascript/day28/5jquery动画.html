@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 200px;
+			background: deepskyblue;
+		}
+	</style>
+	<body>
+		<input type="button" value="show/hide/toggle" />
+		<input type="button" value="slideDown/slideUp/slideToggle" />
+		<div></div>
+	</body>
+</html>
+<script>
+	$(":button:eq(1)").click(function(){
+		$("div").slideToggle(1000)
+	})
+	$(":button:eq(0)").click(function(){
+		$("div").toggle(1000,function(){
+			alert("动画结束")
+		})
+	})
+</script>

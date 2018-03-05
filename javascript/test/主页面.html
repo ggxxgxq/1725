@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span>请输入姓名：</span><input type="text" / id="row"><br>
+		<span>请选择性别：</span><input type="radio" id = "n"/>男
+						<input type="radio" id = "g"/>女<br>
+		<span>请输入年龄：</span><input type="text" id="col"/>
+		<input type="button" value = "添加到表格" id ="btn"/>
+		<!--行：<input type="text" id="row"/>
+		列：<input type="text" id="col" />
+		<input type="button" id="btn" value="创建表格" />
+		<div id="d"></div>-->
+		<table width="449" height="12" border="1" >
+			<tr>
+		<td >
+		全选<input type="checkbox" name="a" id="c1">
+		</td>
+		<td><label>
+		姓名
+		</label></td>
+		<td>性别</td>
+		<td>年龄</td>
+	  </tr>
+		</table>
+	<input type="button" value = "删除所有行" id ="btn"/>
+	</body>
+</html>
+<script src = "public.js"></script>
+<script>
+	$id("btn").onclick = function(){
+		//清空div的内容
+		$id("d").innerHTML = "";
+		var txtRow = $id("row").value;
+		var txtCol = $id("col").value;
+		//非空判断
+		//数字判断
+		var tab = createEle("table");
+		tab.border = 1;
+		$id("d").appendChild( tab );
+		for( var i = 1 ; i <= txtRow ; i++ ){
+			var tr = createEle("tr");
+			tab.appendChild( tr );
+			for( var j = 1 ; j <= txtCol ; j++){
+				var td = createEle("td");
+				td.innerHTML = rand(1,100);
+				td.style.background = getColor();
+				tr.appendChild(td);
+			}
+			//加一列  删除
+			var endTd = createEle("td");
+			endTd.innerHTML = "<input class='del' onclick='del(this)' type='button' value='删除'>";
+			tr.appendChild(endTd);
+		}
+	}
+	
+	function del(obj){
+		//alert( this );
+		//alert( obj.value )
+		obj.parentNode.parentNode.remove();
+	}
+	//window.del();
+</script>

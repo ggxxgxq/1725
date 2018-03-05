@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul >
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+			<li>孩子多个6</li>
+			<li>孩子多个7</li>
+			<li>孩子多个8</li>
+			<li>孩子多个9</li>
+			<li>孩子多个10</li>
+		</ul>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	/*var list = document.getElementsByTagName("li")
+	for(var i=0;i<list.length;i++){	
+	list[i].style.backgroundColor = getColor();
+	}*/
+	//找到所有的li   根据给定的标签名查找页面元素  使用时加下标  
+	var list = document.getElementsByTagName("li");//伪数组
+	//alert( list );
+	for( var i = 0 ; i < list.length ; i++  ){
+		list[i].style.backgroundColor = getColor();
+	}
+	
+</script>

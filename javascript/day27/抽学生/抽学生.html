@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../jquery-1.11.1.js"></script>
+	</head>
+	<style type="text/css">
+		div{
+			width: 300px;
+			height: 300px;
+			border: 2px solid saddlebrown;
+			text-align: center;
+			line-height: 300px;
+			font-size: 60px;
+		}
+		input{
+			width:100px;
+			height: 35px;
+		}
+	</style>
+	<body>
+		<input type="button" id="btn" value="开始"/><br/><br/><br/>
+		<div id="box"></div>
+		<img src="image/1.jpg" alt="" id="m1"/><br/><br/><br/><br/><br/><br/><br/><br/><br/>		
+	</body>
+</html>
+<script src="../../out.js"></script>
+<script type="text/javascript">
+	var arr=["慢慢","邢璐宝宝","2号","小旗","小杨","帆帆","鬼鬼","蓄蓄","倩倩","小羊"] 
+	$("#box").html(arr[0])
+	var timer=null;
+	var flag = true;
+	$("#btn").click(function(){
+		if(flag){
+			 timer = setInterval(function(){
+				var index=rand(0,9)
+				$("#box").html(arr[index]);
+				$("#m1").attr("src","image/"+(index+1)+".jpg")
+			},300)
+				$(this).val("停止");
+		}else{
+			clearInterval(timer);
+			$(this).val("开始");
+		}
+		flag=!flag;
+	})
+</script>

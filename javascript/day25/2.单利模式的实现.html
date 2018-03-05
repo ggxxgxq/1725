@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//方式一
+	var ins = null;
+	function Animal(){
+		if(Animal.ins){
+			return Animal.ins;
+		}else{
+			Animal.ins = this;
+			return Animal.ins;
+		}
+	}
+	var a1 = new Animal();
+	var a2 = new Animal();
+	var a3 = new Animal();
+	alert(a2==a3)  
+	//方式二
+	
+	function Student(){
+		if( !Student.instance){
+			Student.instance={
+				name : "xiaobai",
+				age  : "12" 
+			}
+		}
+		return Student.instance
+	}
+	var s1 = new Student();
+	var s2 = new Student();
+	//alert(s1 == s2)
+</script>

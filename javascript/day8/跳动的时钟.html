@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="d"></div>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	//跳动的时钟
+	/*setInterval(function(){
+		showTime();
+	},1000);
+	
+	function showTime(){
+		var d=new Date();
+		var oDiv=document.getElementById("d");
+		oDiv.innerHTML= dateToString();
+	}
+	showTime();*/
+	//定时器
+	var i=0;
+	var timer=setInterval(fn,1000);
+	function fn(){
+		console.log(++i)
+		if(i==13){
+			clearInterval(timer)
+		}
+	}
+</script>

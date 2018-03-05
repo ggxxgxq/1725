@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//定义一个含有10个元素的数组，任意输入一个数，判断这个数在数组中是否存在，
+	//如果存在，就删除这个数
+	function DelNumber(arr,num){
+		for(var i=0;i<arr.length;i++){
+			if(arr[i]==num){
+				arr.splice(i,1)
+			}
+		}
+		return arr
+	}
+	alert(DelNumber([12,34,2,5,6,7,8] , 5))
+</script>

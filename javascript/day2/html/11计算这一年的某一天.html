@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		年：<input type="text" id="year" />
+		月：<input type="text" id="month"/>
+		日：<input type="text" id="day"/>
+		结果：<input type="text" id="res"/>
+		<input type="button"  id="btn" value="计算" />
+	</body>
+</html>
+<script>
+	/*
+	 要做事   先找人 对象object
+	 1 为按钮添加点击事件  onclick
+	 2 获取 年  月  日 
+	 3 程序实现计算这一天是这一年的第几天
+	 4 将结果回填到文本框中
+	 */
+	var oBtn = document.getElementById("btn");
+	var oTxtYear = document.getElementById ('year');
+	var oTxtMonth = document.getElementById ('month');
+	var oTxtDay = document.getElementById ('day');
+	var oTxtRes = document.getElementById ('res');
+	oBtn.onclick = function(){
+		var y = oTxtYear.value;
+		var m =parseInt( oTxtMonth.value ) ;
+//		alert(typeof m);
+		var d  =parseInt( oTxtDay.value ) ;
+		var sum = 0;//累加天数
+		switch( m ){
+			case 12 : sum += 30;//11
+			case 11 : sum += 31;
+			case 10 : sum += 30;
+			case 9 : sum += 31;
+			case 8 : sum += 31;
+			case 7 : sum += 30;
+			case 6 : sum += 31;
+			case 5 : sum += 30;
+			case 4 : sum += 31;
+			case 3 : {
+				y%4==0&&y%100!=0||y%400==0 ? sum+=29 : sum += 28;
+			}
+			case 2 : sum += 31;
+			case 1 : sum += d;
+		}
+	    oTxtRes.value = sum;
+	}
+</script>

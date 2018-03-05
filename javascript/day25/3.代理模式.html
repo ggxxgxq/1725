@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Start(){
+		this.flim =function(){
+			console.log("可以拍电影")
+		}
+	}
+	
+	function Jjr(){
+		this.master = new Start();
+		//代理对象负责实现     Start中的某个功能
+		this.flim = function(money){
+			if( money > 10000){
+				this.master.flim();
+			}
+		}
+	}
+	var jj = new Jjr();
+	jj.flim(80000)
+</script>

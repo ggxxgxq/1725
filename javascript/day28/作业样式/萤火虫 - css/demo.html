@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+
+		<style type="text/css">
+			*{
+				padding: 0;
+				margin: 0;
+			}
+				#bg{
+					background: url(img/bg.jpg)  no-repeat;
+					background-size: cover;
+					width: 100%;
+					height: 100%;
+					position: fixed;
+				}
+				img {
+					width: 18px;
+					height: 18px;
+					position: absolute;
+					
+				}
+		</style>
+
+	</head>
+
+	<body>
+
+		<div id="bg">
+
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+		 
+
+	</body>
+</html>
+<script src="../../../out.js"></script>
+<script>
+	function FireFlay(){
+	    this.body = $("<img src='img/1.jpg'>");
+	    this.bg =$("#bg");
+	}
+	FireFlay.prototype={
+		init : function(){
+			this.bg.append(this.body);
+			this.body.css({"left":rand(0,this.bg.width()-this.body.width()),
+			               "top":rand(0,this.bg.height()-this.body.height())})
+			return this;
+		},
+		fly : function(){
+			this.body.animate({"left":rand(0,this.bg.width()-this.body.width()),
+				               "top":rand(0,this.bg.height()-this.body.height())
+		},rand(2000,6000),function(){
+				this.fly();
+			}.bind(this))
+			return this;
+		},
+		ck : function(){
+			$(document).mousedown(function(e){
+				var e = e || event;
+				this.body.stop().animate({"left":e.pageX,"top":e.pageY},1000)
+			}.bind(this))
+			$(document).mouseup(function(){
+				this.fly();
+			}.bind(this))
+		}
+	}
+	window.onload = function(){
+		for(var i=0;i<70;i++){			
+			new FireFlay().init().fly().ck();
+		}
+	}
+</script>

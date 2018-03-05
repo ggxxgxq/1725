@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var map =new Map();
+	map.set("name","xiao").set("sex","女").set("addr","北京")
+	//map.delete("sex")
+	//map.has("sex")
+	//map.clear()
+	console.log(map.get("name"))  //获取对象的值
+	for(var value of map){
+		//console.log(value[1])  //value 相当于对象的键值对item  value[1]相当于对象下标
+		console.log(map.get(value[0]))
+	}
+</script>

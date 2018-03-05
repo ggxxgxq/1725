@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="css/dahuiji.css"/>
+ 
+	 
+	<body>
+		<div class="main" id="main">
+			<ul class="options" id="options">
+				<li level="1">非常简单</li>
+				<li level="2">比较简单</li>
+				<li level="3">比较困难</li>
+				<li level="4">春哥附体</li>
+			</ul>
+		</div>
+	</body>
+</html>
+<script src="../../out.js"></script>
+<script type="text/javascript">
+	window.onload =function(){
+		new Engine().init();
+	}
+	function Engine(){
+		this.main = document.getElementById("main");
+		this.init = function(){
+			var that = this;
+			this.oli =document.getElementsByTagName("li");
+			for(let i =0;i<this.oli.length ;i++){
+				this.oli[i].onclick = function(){
+				    this.parentNode.remove();
+				    that.loadingPage();
+				}
+			}
+		}
+		this.loadingPage = function(){
+			var that = this;
+			this.logo = createEle("div");
+			this.logo.className = "logo";
+			this.main.appendChild(this.logo);
+			this.loading = createEle("div");
+			this.loading.className = "loading";
+			this.main.appendChild(this.loading);
+			var index =0;
+			this.loadingtimer = setInterval(function(){				
+				that.loading.style.background =" url(images/loading"+(++index % 3 +1)+".png) no-repeat";
+			},500)
+			var positionY = 0;
+			this.positiontimer = setInterval(function(){
+				that.main.style.backgroundPositionY = ++positionY + "px"
+			},30)
+			setTimeout(function(){
+				that.logo.remove();
+				clearInterval(this.loadingtimer);
+				that.loading.remove();
+				that.startGame();
+			},3000)
+		}
+	   this.startGame = function(){
+	   	   new Plane().init;
+	   }
+	
+	function Plane(){
+		this.main = $id("main");
+		this.myplane = createEle("div");
+		this.init = function(){			
+		    this.main.appendChild(this.myplane)
+		    this.myplane.className = "my-warplain";
+			this.x =this.main.offsetWidth/2-this.myplane.offsetWidth/2;
+			this.y= window.innerHeight -this.myplane.offsetHeight;
+			this.myplane.style.left = this.x + "px";
+			this.myplane.style.top = this.y + "px";
+		}
+	}
+}
+</script>
+ 

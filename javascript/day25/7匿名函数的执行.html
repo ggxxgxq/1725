@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//用小括号将匿名函数括起来  载加一个小括号
+	/*(function (){
+		alert("匿名函数")
+	})();*/
+	
+	//带参数的匿名函数执行
+	/*(function (a,b){
+		alert(a+b)
+	})(5,6)*/
+	//有返回值的匿名函数
+	/*var res = (function(a,b){
+		return a>b ? a: b;
+	})(3,4)
+	alert(res)*/
+	var fn = function(){
+		alert(23)
+	}();
+	//alert(fn)
+</script>

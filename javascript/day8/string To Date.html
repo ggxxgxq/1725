@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*function stringToDate(str){
+		return new Date(str);
+	}
+	var _date = stringToDate("1999-12-12");
+	alert(_date.getFullYear())
+	
+	var str="1992-12-23" 
+    var d=new Date(Date.parse(str));             //str  获取str的时间   Date.parse获取毫秒值再转成日期
+	alert()*/
+	var d = new Date("1992-12-20");
+	var f = new Date("1980-12-20");
+	var now =new Date();
+	var diff=now.getTime() - d.getTime();//毫秒值
+	var day =(now.getTime() - d.getTime())/1000/60/60/24;
+	//alert(day)
+	
+	
+	////定义一个时间差函数
+	function diffTime(start,end){
+		return Math.abs(start.getTime-end.getTime)/1000
+		
+	}
+	//alert(diffTime("1992-12-20","1980-12-20"))
+</script>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="suceess.html">
+			用户名 ：<input type="text" id="uname"/><span id="s1"></span><br>
+			密码 ：    <input type="text" id="upwd" /><span id="s2"></span><br>
+			爱好 ： 
+				<input type="checkbox" class = "h"/>篮球
+				<input type="checkbox" class = "h"/>足球
+				<input type="checkbox" class = "h"/>棒球
+				<input type="checkbox" class = "h"/>铅球<span id="s3"></span><br>
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>
+<script src = "../out.js"></script>
+<script>
+	$id("uname").onblur=function(){
+		var tname =$id("uname").value;
+		var reg=/^\w{3,}$/;
+		
+	}
+</script>

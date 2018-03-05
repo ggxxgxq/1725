@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		div{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			margin-bottom: 10px;
+			border:1px solid red;
+			padding: 5px;
+		}
+	</style>
+	<body>
+		<div id="b1"></div>
+		<div></div>
+		<div></div>
+	</body>
+</html>
+<script>
+	var oDivs =document.getElementsByTagName("div");
+	for( var i = 0 ; i < oDivs.length ; i++ ){
+		oDivs[i].onmouseover = function(){
+			startMove(this,300,"width");
+		}
+		oDivs[i].onmouseout = function(){
+			startMove(this,100,"width");
+		}
+	}
+	function startMove(obj,target,attr){
+		clearInterval(obj.timer);
+		obj.timer = setInterval(function(){
+			var current = parseInt( getStyle(obj,attr) );//获取操作元素样式的实际值
+			var speed = (target - current)/10;
+			speed = speed>0 ? Math.ceil(speed) : Math.floor(speed);
+			if( current == target ){
+				clearInterval( obj.timer );
+			}else{
+				obj.style[attr] = current + speed + "px";
+			}
+		},30)
+	}
+	function getStyle(obj,attr){
+		if(window.getComputedStyle){
+			return window.getComputedStyle(obj,false)[attr]
+		}else{
+			return obj.currentStyle[attr]
+		}
+	}
+</script>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+			margin:0;
+			padding:0;
+		}
+		</style>
+		
+	</head>
+	<body>
+		<p>登录页面：</p>
+		<div>
+			<span>用户名：</span><input type="text" id = "tname"/><br>
+			<span>密码：</span><input type="text" id = "tpwd"/><br>
+			<input type="button" value = "登录" id = "login"/>
+	</body>
+</html>
+<script>
+	function $(id){
+		return document.getElementById(id)
+	}
+	$("login").onclick = function(){
+		var str = document.cookie;
+		var arr = str.split("; ");//拆分成两部分 
+		for(var i = 0 ; i < arr.length ; i ++ ){
+			var itme = arr[i].split("=")//从等号再分成两部分 
+			if(itme[0] == "username"){
+				tname = itme[1];
+			}
+			if(itme[0] == "userpwd"){
+				tpwd = itme[1];
+			}
+		}
+		var uname = $("tname").value;
+		var upwd = $("tpwd").value;
+		if(tname == uname && upwd == upwd){
+			location.href = "主页面.html";
+		}
+	}
+</script>

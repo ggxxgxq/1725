@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="jquery-1.11.1.js"></script>
+	 
+	<body>
+		<ul>
+			<li class="d">孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+			<li>孩子多个6</li>
+			<li>孩子多个7</li>
+			<li>孩子多个8</li>
+		</ul>
+		<input type="checkbox" id="aa" />全选
+		<input type="checkbox" id="ff" />反选
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h" />
+		<input type="checkbox" name="h" />
+		<input type="checkbox" name="h" />
+		<input type="checkbox" name="h"/>
+		<input type="checkbox" name="h"/>
+	</body>
+</html>
+<script>
+	//$("li").attr("level","aa");
+	//alert( $("li").eq(2).attr("level"))
+	//alert($("li").eq(0).attr("class"))
+	//attr不能操作布尔类型  需要用prop
+	
+	$("#aa").click(function(){
+		//alert($(this).prop("checked"))  true  false
+		$("input[name=h]").prop("checked",$(this).prop("checked"))
+	})
+	$("#ff").click(function(){
+	for(var i=0 ;i<$("input[name=h]").size();i++){
+		if($("input[name=h]").eq(i).prop("checked")){			
+				$("input[name=h]").eq(i).prop("checked",false)
+		}else{
+				$("input[name=h]").eq(i).prop("checked",true)
+		}
+	}
+	})
+</script>

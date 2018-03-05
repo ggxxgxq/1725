@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			position: absolute;
+			left: 0;
+			top: 100px;
+		}
+		#btn{
+			margin: 50px;
+		}
+	</style>
+	<body>
+		<input type="button" value="向右运动" id="btn1" />
+		<input type="button" value="向左运动" id="btn2" />
+		<div id="box"></div>
+	</body>
+</html>
+<script>
+	//点击向右按钮  让div匀速向右移动300px后停止运动
+	//点击向左按钮  让div运送向左移动0px后停止运动
+	var oDiv =document.getElementById("box");
+	var btnLeft =document.getElementById("btn1");
+	var btnRight =document.getElementById("btn2");
+	var timer =null;
+	var speed =0;
+	btnLeft.onclick=function(){
+		startMove(300)
+	}
+	btnRight.onclick=function(){
+		startMove(0)
+	}
+	function startMove(target){
+		clearInterval(timer);
+		timer=setInterval(function(){
+			if(oDiv.offsetLeft ==target){
+				clearInterval(timer);
+			}else{
+				speed = target-oDiv.offsetLeft>0 ? 5:-5;
+				oDiv.style.left = oDiv.offsetLeft +speed+"px";
+			}
+			
+		},30)
+	}
+</script>

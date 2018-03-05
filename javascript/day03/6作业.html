@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+//	1、	打印出1000-2017年中所有的闰年，并以每行四个数的形式输出
+	/*var count =0;
+		for (y=1000;y<=2017;y++){
+			if(y%4==0 && y%100!=0 || y%400==0){
+				document.write(y+ "年是闰年 ");
+				count++;
+				if(count%4==0){
+				document.write("<br>");
+			    }
+			}
+			
+		}*/
+/*	2、	任意输入一个数，判断这个数是不是素数(质数)？
+素数：  只能被1和他本身  2 3 5 7 11*/
+  
+	var count =parseInt(prompt("请输入一个数"))
+	for(i=2;i<=count-1;i++){//2
+	    if(count%i==0){//0
+	    	    alert(count +"不是素数(质数)")	;
+	    	    break;   
+	    }
+	   }
+		if(i==count){
+		alert(count + "是素数(质数)")
+        }
+	
+	
+	/*3、	任意输入一个正整数，判断这个数的位数？
+例如：输入326     输出 3
+	   输入 1235  输出4*/
+/*4、	输出m---n数中奇数和 偶数和 并计算奇数和偶数分别有几个？
+m和n的值从键盘输入（prompt() ）*/
+   /* var m =parseInt(prompt("请输入一个自然数"))
+    var n =parseInt(prompt("请输入一个自然数"))
+    var count = 0, Num = 0,sumM=0, sumN=0;
+    for(var i=m; i<=n;i++ ){
+    	if(i%2==0 ){ 
+// 		document.write();
+    		count++;
+    		sumM +=i;
+    
+    	console.log(sumM);
+    	}else {
+//		document.write();
+    		Num++;
+    		sumN +=i;
+    		
+    		console.log(sumN);
+    	}
+    }
+    	document.write(sumM +"<br>");
+    	document.write(sumN +"<br>");
+    alert("偶数的个数是"+ count + "," + "奇数的个数是" + Num);*/
+// 6、	一个员工的入职薪水10K, 每年涨幅5%，问 10年后月薪是多少？
+/*var bonus = 10;
+var after = Math.pow(1.05,10);
+console.log(after);
+  bonus = bonus * after;
+document.write(bonus);*/
+/*编程实现 山上有一口缸可以装50升水，现在有15升水。
+	 老和尚叫小和尚下山挑水，每次可以挑5升。
+	 问：小和尚要挑几次水才可以把水缸挑满？通过编程解决这个问题。*/
+    /*var count =0;
+    for ( var i=15;i<50;i +=5){
+    	count++;
+    	console.log(count);
+    	
+    
+    }
+    alert("小和尚需要挑" +count +"次水")*/
+   /*有一个棋盘，有64个方格，在第一个方格里面放1粒芝麻重量是0.00001kg，
+ 第二个里面放2粒，第三个里面放4，计算 棋盘上放的所有芝麻的重量*/
+   /* var wei = 0.00001, sum =0 ;count =0;
+    for(var i=0;i<64;i++ ){
+    	j = Math.pow(2,i);
+    	count +=j;
+    	
+    }
+    sum =count*wei; 
+    document.write(sum);*/
+  /* 3、	任意输入一个正整数，判断这个数的位数？
+例如：输入326     输出 3
+	   输入 1235  输出4*/
+	/*var n=parseInt (prompt("请输入一个正整数"));
+	var count =0; 
+	  while ( n!=0 ){
+	  	n=parseInt(n/10);
+		count++;
+	  }
+	  	 
+	 	alert(count);*/
+    
+</script> 

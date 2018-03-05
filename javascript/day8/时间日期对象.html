@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+        .box{
+            width: 150px;
+            height: 180px;
+            background-color: #369;
+            margin: 100px auto;
+            text-align: center;
+        }
+        .box p {text-align: center;
+            line-height: 60px;
+            font-size:12px;
+            color: #fff;
+        }
+        .box span{
+            display: block;
+            width: 75px;
+            height: 75px;
+            margin: 0 auto;
+            font-size:50px;
+            color: #000;
+            background-color: yellowgreen;
+            line-height: 75px;
+        }
+    </style>
+	</head>
+	<body>
+		<!--当前时间是：<div id="t" ></div>-->
+		<div class="box" id="box">
+		    <p id="p1">ssss</p>
+		    <span id ="s1">dddd</span>
+        </div>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	/*var d=new Date()
+	console.log(d.getMonth())// 月份加一  因为月份是从零开始算的
+	console.log(d.getDay()) //星期是小写数字
+	   var oDiv=document.getElementById("t");
+	   oDiv.innerHTML=d.getFullYear()+"年"+d.getMonth()+"月"+d.getDate()+"日"
+	alert(d.toLocaleString()) //获取本地时间*/
+	var arr=["星期日","星期一","星期二","星期三","星期四","星期五","星期六"]
+	var d=new Date();
+	var oP= $id("p1")
+	var oSpan= $id("s1")
+	oP.innerHTML = d.getFullYear()+"年"+d.getMonth()+"月"+d.getDate()+"日"+" "+arr[d.getDay()];
+	oSpan.innerHTML =d.getDate();
+</script>

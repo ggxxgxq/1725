@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		行：<input type="text" id="row"/>
+		列：<input type="text" id="col"/>
+		<input type="button" id="btn" value="创建表格"/>
+		<div id="d"></div>
+		
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	$id("btn").onclick=function(){
+		$id("d").innerHTML = "";
+		var txtrow = $id("row").value;
+		var txtcol = $id("col").value;
+		if( txtrow=="" || txtcol==""){
+			alert("输入的值不能为空")
+		}else if(isNaN(txtrow) || isNaN(txtcol)){
+			alert("必须输入数字")
+		}else{
+		var tab=createEle("table");
+		tab.border=1;
+		$id("d").appendChild(tab);
+		for(var i=0;i<txtrow;i++){
+		    var tr=createEle("tr");
+			tab.appendChild(tr);
+			for(var j=0;j<txtcol;j++){
+				var td=createEle("td");
+				td.innerHTML =rand(1,100);
+				td.style.backgroundColor=getColor();
+				tr.appendChild(td);	
+			}
+			
+				var endTd = createEle("td");
+				endTd.innerHTML = "<input type='button' id='del' onclick='del(this)' value='删除' />"
+				tr.appendChild(endTd);
+			
+		}
+		
+    }
+	}
+		function del(obj){
+			if(confirm("确定要删除吗？")){	
+			obj.parentNode.parentNode.remove();
+			}
+		}
+</script>

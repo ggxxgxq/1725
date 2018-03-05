@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+    var y= 2017,m= 4,d= 20;
+    var Sum =0;
+    switch(m){
+    	case 12: Sum +=31;
+    	case 11: Sum +=30;
+    	case 10: Sum +=31;
+    	case 9: Sum +=30;
+    	case 8: Sum +=31;
+    	case 7: Sum +=31;
+    	case 6: Sum +=30;
+    	case 5: Sum +=31;
+    	case 4: Sum +=30;
+    	case 3: Sum +=31;
+    	case 2:{
+    		
+    		y%4==0 && y%100!=0 || y%400==0 ? Sum +=29 : Sum +=28;
+    	} 	
+    	case 1: Sum +=d;
+    }
+    alert("输入的日期是第"+Sum+"天");
+</script>

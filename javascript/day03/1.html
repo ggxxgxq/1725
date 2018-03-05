@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//写出1--100以内的数
+	/*var i = 1;
+	while (i<=100){
+		
+		document.write(i)
+		i++;
+	}*/
+	//循环输出1--100之间的奇数
+	/*var i = 1;
+	while (i<=100){
+		
+		document.write(i+" ")
+		i +=2;
+	}*/
+	
+	/*var i = 1;
+	while (i<=100){
+		if(i%2){ //1 0 1   //判断i是否是奇数  
+		    document.write(i+" ")	//1 3
+		}
+		
+		i++;  //2 3 4
+	}*/
+	//输出1--100以内能被3整除的数
+	/*var i = 1;
+	while (i<=100){
+		if(!(i%3)){ //1 1 1   //判断i是否被整除
+		    document.write(i+" ")	//3
+		}
+		
+		i++;  //2 3 
+	}*/
+	
+	//输出1--100以内既能被3整除 又能被7整除的数
+	var i = 1;
+	while (i<=100){
+		if(!(i%3) && !(i%7)){ //1 1 1   //判断i是否被整除
+		    document.write(i+" ")	//3
+		}
+		
+		i++;  //2 3 
+	}
+</script>

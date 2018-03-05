@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<input type="button" value="append/appendTo" />   <!--父子元素-->
+		<input type="button" value="prepend/prependTo" />  <!--父子元素-->
+		<input type="button" value="after/insertAfter" />  <!--兄弟元素-->
+		<input type="button" value="before/insertBefore" /> <!--兄弟元素-->
+		<input type="button" value="remove/empty/clone" />
+		<div style="width: 500px; height: 300px; border: 2px solid red;">
+			<p>全力以赴学习吧</p>
+		</div>
+	</body>
+</html>
+<script>
+	$("input").eq(0).click(function(){
+		//$("div").append($("<p>爱学习才能赚钱养家</p>"))
+		$("<p>爱学习才能赚钱养家</p>").appendTo("div");
+	})
+	$("input").eq(1).click(function(){
+		$("div").prepend($("<p>爱学习才能赚钱养家</p>"))
+		//$("<p>爱学习才能赚钱养家</p>").prependTo("div");
+	})
+	$("input").eq(2).click(function(){
+		//$("div").after($("<p>爱学习才能赚钱养家</p>"))
+		$("<p>爱学习才能赚钱养家</p>").insertAfter("div");
+	})
+	$("input").eq(3).click(function(){
+		//$("div").before($("<p>爱学习才能赚钱养家</p>"))
+		$("<p>爱学习才能赚钱养家</p>").insertBefore("div");
+	})
+	$("input").eq(4).click(function(){
+		//$("div").empty();
+		//$("div").remove()
+		$("div").clone().insertAfter("div")
+	})
+</script>

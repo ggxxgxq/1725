@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Father(age){
+		this.age = age;
+		this.money = 99999;
+		this.liaomei =function(){
+			console.log("撩妹");
+		}
+	}
+	Father.prototype.name="孩他爹";
+	Father.prototype.music=function(){
+		console.log("唱歌")
+	}
+	
+	function Child(){
+		
+	}
+	Child.prototype =new Father("38");
+	//38为父类的年龄 并不是子类的年龄   值无法改变
+	var son =new Child();
+	console.log(son)
+</script>

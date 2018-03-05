@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		 *{margin:0;padding:0;}
+		 header{width:600px;height:500px;background:#ccc;margin:0 auto;overflow:hidden;}
+		.box,.box2{overflow:hidden;height:200px;}	
+
+		.left{float:left;}
+		.num1,.num2,.txt,p{border-radius:10px;margin:20px;background:#fff;}
+		.num1,.num2{width:400px;height:100px;line-height:100px;text-align:center;}
+		p{width:100px;height:100px;background:skyblue;text-align:center;line-height:100px;}
+	    .txt{width:100px;height:100px;}
+		</style>
+	</head>
+	 
+	<body>
+		<header>
+			
+		<div class="box">
+		  <h3>使用鼠标操作DIV触发事件</h3>
+	 	  <p class="left" id="text" >DIV</p>
+	 	  <div class="num1 left" id="event"></div>
+	    </div>
+	 
+	    <div class="box2">
+	    	<h3>使用键盘操作输入框操作事件</h3>
+		 <textarea name="" class="txt left"  id="keyboard" cols="30" rows="10"></textarea>
+		 <div class="num2 left" id="event2"></div>	
+	    </div>
+	    </header>
+	</body>
+</html>
+<script>
+	/*4、	根据右侧的描述  完成对应的鼠标事件
+如果双击蓝色div，右侧   div出现提示
+如果用键盘事件触发左侧文本域 ，  右侧 div出现提示*/
+    var oTxt =document.getElementById("text")
+    var oEvent =document.getElementById("event")
+    var oKbd =document.getElementById("keyboard")
+    var oEvt =document.getElementById("event2")
+      oTxt.ondblclick =function(){
+      	oEvent.innerHTML ="你刚刚双击了DIV,触发了dblcilck事件";
+      }
+      oKbd.onchange =function(){
+      	oEvt.innerHTML ="输入框内容被改变,触发了onchange事件";
+      }
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="suceess.html">
+			用户名 ：<input type="text" id="uname"/><br>
+			密码 ：    <input type="text" id="upwd" /><br>
+			<input type="submit" value="提交" />
+		</form>
+	</body>
+</html>
+<script src = "../out.js"></script>
+<script>
+	// onsubmit   表单提交事件
+	var oForm = document.getElementsByTagName("form")[0];
+	oForm.onsubmit = function(){
+		//验证每一个表单项是否符合规范  如果不符合规范就返回false     
+		// 用户名
+		var reg = /^\w{3,6}$/;
+		var tname=$id("uname").value;
+	    if(!reg.test(tname)){
+	    	alert("输入的用户名不合法");
+	    	return false;
+	    }
+		//密码
+		var reg = /^.{6,}$/;
+		var tpwd=$id("upwd").value;
+		if(!reg.test(tpwd)){
+			alert("输入的密码不正确");
+			return false;
+		}
+		
+		return true;
+	}
+</script>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		<div id="demo" class="c1">123
+		<p>1</p>
+		<p>2</p>
+		<p class="demo">3</p>
+		<div  class="c1">123</div>
+		<span>kdskdkk</span>
+		<div  class="c1">123</div>
+		<div  class="c1">123</div>
+		</div>
+		<p class="demo">1</p>
+		<p>2</p>
+		<p>3</p>
+		<a href="" id="aa" >df</a><br/>
+		<span>kdskdkk</span>
+	</body>
+</html>
+<script>
+	/*
+	     1  让id为mp的元素文字大小变成30px            	 
+         2. 让class名为.c1的元素背景为#CCFF99           
+         3. 找到所有的div和p          
+         4. 将所有的div增加 2像素 实线 红色          
+         5. 将div下的所有子div中文字变蓝色blue   
+         6. 将div中包含的div颜色变成#FF99FF       
+         7. 将div的下面所有兄弟标签p的字体颜色变成蓝色          
+         8. 将紧跟着div的p标签的边框设为2像素 实线 #009900         
+        ?? 9  找到页面中的所有dom元素         
+         10 找到页面中所有偶数行的p元素          
+         11  找到页面中的最后一个li元素         
+         12 找到第一个类名称为demo的元素          
+         13 找到div下面所有的子元素p          
+        ?? 14 找到表格奇数行中的最后一个tr          
+         15 找到id为 demo下面的所有兄弟元素 p         
+         16 找到除了第三个li之外的所有的li元素         
+        ?? 17 找到页面中不包含 p 元素的所有元素         
+	    18、找到下标为3的li标记	     
+         19、找到页面中的所有超链接和span标记         
+         ??20、找到类名为p1的li元素
+	 */
+	//$("#mp").css("fontSize","30px")
+	//$(".c1").css("background","#CCFF99")
+	//$("div,div~p").css("background","red")
+	//$("div").css("border","2px solid red")
+	//$("#mp div").css("color","blue")
+	//$("#mp div").css("background","#FF99FF ")
+	//$("div~p").css("color","skyblue")
+	//$("#mp+p").css("border","2px solid #009900")
+	//$("*").css("background","skyblue")
+	//$("p:even").css("background","red")
+	//$("p:last").css("color","red")
+	//$(".demo:first").css("color","red")
+	//$("div p").css("background","teal")
+	
+	//$("#demo~p").css("color","pink")
+	//$("p").eq(2).siblings("p").css("color","blue")
+	//$("*").not("p").css("border","1px solid #f00")
+	//$("p").eq(3).css("color","red")
+	//$("a,span").css("color","pink")
+	//$("p.demo").css("color","red")
+</script>

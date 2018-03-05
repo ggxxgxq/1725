@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="jquery-1.11.1.js"></script>
+	<style type="text/css">
+		#over,#enter{
+			width: 200px;
+			height: 200px;
+			background: deepskyblue;
+			margin:20px;
+		}
+		#son,#son2{
+			width: 100px;
+			height: 100px;
+			background: red;
+		}
+	</style>
+	<body>
+		<div id="over">
+			<div id="son">over</div>
+		</div>
+		<div id="enter">
+			<div id="son2">enter</div>
+		</div>
+	</body>
+</html>
+<script>
+	/*$("#over").mouseover(function(){
+		alert("over")
+	})
+	$("#enter").mouseenter(function(){
+		alert("enter")
+	})*/
+	$("#enter").hover(function(){
+		alert(1)
+	},function(){
+		alert(2)
+	})
+</script>

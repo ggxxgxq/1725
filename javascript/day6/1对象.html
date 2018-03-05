@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*var obj ={
+		sname:"xiaoming",
+		sex:"女",
+		tel:"3245",
+		add:"山西",
+		study:function (){
+			alert("吃面包不吃饭");
+		},
+		sport:function(){
+			alert("喜欢踢足球");
+		}
+	}
+	alert(obj.sname);
+	obj.study()
+	obj.sport()*/
+	/*var obj ={}
+	num =12;
+	num.index =19;
+	obj.index =10;
+	alert(num.index);
+	alert(obj.index);
+	obj.eat =function(){
+		alert("笨狗");
+	}
+	obj.eat()*/
+	/*function Animal(){
+		
+	}
+	var a =new Animal(44);
+	var num =new Number(89);//var num=99
+	//alert(num);
+	a.index =20;
+	num.index=30;
+	console.log(num.index);
+	console.log(a.index);*/
+	/*var arr=[200,300,567,234,456]
+	//alert(arr[2])
+	var arr2 =new Array(3)//创建空数组
+	//alert(arr2.length)
+	arr2[0]=12;
+	arr2[5]=13;
+	//alert(arr2.length);
+	alert(arr2[1]);
+	alert(typeof arr)*/
+	/*var arr=[100,23,35,46,26]
+	var sum=0;
+	for(var i=0;i<arr.length;i++){
+		//console.log(arr[i])
+		sum +=arr[i];
+	}
+	var avg=sum/arr.length;
+	console.log(sum);
+	alert(avg)*/
+	
+	//for in
+	/*var arr=[100,23,35,46,26]
+	var sum=0
+	for(var i in arr){
+		sum +=arr[i]
+	}
+    var avg=sum/arr.length;
+	console.log(sum);
+	alert(avg)*/
+	
+	//定义一个含有10个元素的数组，计算数组中素数的个数
+	/*var arr=[100,23,34,345,35,67,56,19,10,13]
+	function isPrimerNumber(num){
+	    for(var i=2;i<num;i++){
+	    	if(num%i==0){
+	    		return false;
+	    	}
+	    }
+	    return true;
+	}
+	var count=0;
+	for(var i=0;i<arr.length;i++){
+		if(isPrimerNumber( arr[i] ) ){
+			
+			count++;
+		}
+	}
+	alert(count);*/
+	// 定义了一个三行四列的二维数组
+	/*var arr=[[12,23,34,45],[11,3,12,48],[36,33,35,37] ]
+	    document.write("<table>")
+	    for(var i=0;i<=arr.length;i++){
+	    	document.write("<tr>")
+	    	for(var j=0;j<arr[i].length;j++){
+	    		document.write("<td>"+arr[i][j]+"</td>")
+	    	}
+	    	    document.write("</tr>");
+	    }
+	    document.write("</table>")*/
+	   
+//计算数组中所有偶数的和 奇数的和   偶数的个数  奇数的个数
+   /* var arr=[1,2,4,5,6,7]
+    var sum1=0,sum2=0;
+    var count1=0,count2=0;
+    for(var i=0;i<arr.length;i++){
+    	if(arr[i]%2==0){
+    		console.log(arr[i])
+    		sum1 +=arr[i];
+    		count1 ++;
+    	}else{
+    		console.log(arr[i])
+    		sum2 +=arr[i];
+    		count2 ++;
+    	}
+    }
+    alert("偶数的和是："+sum1 + "," + "个数是" + count1)
+    alert("数组中奇数的和是：" + sum2 + "," + "个数是" + count2)*/
+  //已知数组  arr = [23,12],将数组中的两个数交换后输出
+      /*var arr=[23,12]
+      var temp=arr[0];
+      arr[0]=arr[1];
+      arr[1]=temp;
+      alert(arr);*/
+   //定义一个数组，存放6个数，输出这些数，并计算这些数据的平均数
+    /* var arr=[1,2,3,4,5,6]
+     var sum=0;
+     var avg=1;
+     for(var i=0;i<arr.length;i++){   
+         document.write(arr[i]+" ");
+         sum +=arr[i];
+     }
+         avg=sum/arr.length;
+         alert("平均数是"+avg)*/
+   //输出数组中的最大数和最小数
+   /*var arr=[12,45,67]
+   	var Max=arr[0];
+   	var Min=arr[0];
+   for(var i=0;i<arr.length;i++){
+   
+   	  if( Max< arr[i]){
+   	  	Max=arr[i];
+   	  }
+   	  if( Min> arr[i]){
+   	  	Min=arr[i];
+   	  }
+   }
+   alert("最大数是："+Max+","+"最小数是："+Min)*/
+  //定义一个含有30个整型元素的数组，按顺序分别赋予从2开始的偶数；
+  //然后按顺序每五个数求出一个平均值，放在另一个数组中并输出。试编程。
+  /*var arr=[]
+  for(var i=0;i<=29;i++){
+  	  arr[i]=(i+1)*2;
+  }
+   var sum=0;
+   var brr=[];
+   var index=0;
+   for(var i=0;i<=29;i++){
+   	   sum +=arr[i];
+	   if(i%5==4){
+	   	  brr[index]=parseInt(sum/5);
+	   	  index++;
+	   	  sum=0;
+	   }
+   }
+   alert(brr)*/
+ /* 通过循环按行顺序为一个5×5的二维数组a赋1到25的自然数，然后输出该数组的左下半三角。试编程。
+1   2   3  4   5
+6   7   8  9   10
+11 12   13  14  15*/
+
+/*var arr=[[],[],[],[],[],[]]
+var num=1;
+for(var i=0;i<5;i++){
+    	for(var j=0;j<5;j++ ){ 	
+    		arr[i][j]=num++;
+    	document.write(arr[i][j]+" ");
+    	
+    	}
+    	for(j=0;j<=i;j++){
+    		document.write(arr[i][j]+" ");
+    	}
+    	document.write("<br>");
+   }*/
+
+</script>

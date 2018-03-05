@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//让两个数从小到大的顺序输出
+/*	var One = parseInt(prompt("请输入一个数"));
+	var Two = parseInt(prompt("请再输入一个数"));
+    if(One>Two){
+    	alert(Two);
+    	alert(One);
+    }
+    else if(Two>One){
+    	alert(One);
+    	alert(Two);
+    }else{
+    	alert(One);
+    	alert(Two);
+    }*/
+    var One = parseInt(prompt("请输入一个数"));
+	var Two = parseInt(prompt("请再输入一个数")); 
+	var Temp;
+	if  (One>Two){
+		Temp = One;
+	    One = Two;
+	    Two = Temp;
+		
+	}
+	alert("从小到大的顺序是" +  One + ","  + Two);
+</script>

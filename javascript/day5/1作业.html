@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1 id="h">改变字体的颜色和背景</h1>
+		<img id="img" src="1.png" alt="" />
+		<input type="button" id="btn" value="隐藏"  />
+	</body>
+</html>
+<script>
+	//点击h1  改变h1的字体颜色和背景颜色
+	var oH =document.getElementById("h");
+	oH.onclick =function(){
+		oH.style.color ="red";
+		oH.style.backgroundColor ="skyblue";
+		oH.style.fontSize = "30px";
+		oH.innerHTML="作业真多，写都写不完"
+	}
+	
+	/*var oImg = document.getElementById("img");
+	oImg.onmouseover = function(){
+		oImg.src ="goods.jpg"
+	}
+	oImg.onmouseout = function(){
+		oImg.src ="1.png"
+	}*/
+	
+	var oBtn =document.getElementById("btn");
+	var oImg = document.getElementById("img");
+	    oBtn.onclick = function(){
+	    	   var cont = oBtn.value;
+	           if(cont=="隐藏"){
+	    	   oBtn.value ="显示";
+	           oImg.style.display="none";
+	    	}else if(cont=="显示"){
+		        oBtn.value ="隐藏";
+	            oImg.style.display="block";
+	    	}
+	}
+	
+	/*oBtn.onclick = function(){
+		oBtn.value ="隐藏";
+	    oImg.style.display="block";
+	}*/
+</script>

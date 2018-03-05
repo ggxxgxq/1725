@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		ul{
+			display:none;
+		}
+	</style>
+	</head>
+	<body>
+		<input type="button" value="显示个人资料" id="btn"/>
+		<ul id="u">
+			<li>姓名：王宝强</li>
+			<li>职业：演员</li>
+			<li>性别：男</li>
+			<li>代表作 ： 人在囧途</li>
+			<li>妻子 ：xxx</li>
+		</ul>
+	</body>
+</html>
+<script>
+	var oBtn =document.getElementById("btn");
+	var oU =document.getElementById("u");
+	oBtn.onclick = function(e){
+		var e = e ||event;
+		e.stopPropagation ? e.stopPropagation() : e.cancelBubble=true;
+		oU.style.display ="block";
+		
+	}
+	document.onclick=function(){
+		oU.style.display ="none";
+	}
+</script>

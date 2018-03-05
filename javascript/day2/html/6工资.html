@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var worYear =parseInt (prompt("请输入工龄时长"));
+	var bonus = parseInt (prompt("请输入工资"));
+	if(isNaN(worYear)){
+	
+	}else if(worYear<1){
+		if(bonus>8000){
+			bonus=1.2*bonus;
+		}else{
+			bonus=bonus;
+		}
+	}else if(worYear>=1 && worYear<2){
+		if(bonus>10000){
+			bonus=1.7*bonus;
+		}else{
+			bonus=1.5*bonus;
+		}
+	}else if(worYear>=2){
+	    if(bonus>12000){
+			bonus=3.2*bonus;
+		}else{
+			bonus=3*bonus;
+		}	
+	}else{
+		alert("请输入一个数字");
+	}
+	alert("您的工资是" + bonus);	
+	
+</script>

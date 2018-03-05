@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var a =parseInt(prompt("请输入一个数"))
+	var b =parseInt(prompt("请再输入一个数"))
+	var c =parseInt(prompt("请再输入一个数"))
+	if (a>b && a<c){
+		alert(c);
+	}else if(a>b && a>c){
+		alert(a);
+	}else if(a<b && a>c){
+		alert(b);
+	}else if(a<b && a<c){
+		if(b>c){
+		  alert(b);
+		}else{
+			alert(c);
+		}
+	}else if(a<c && a>b){
+		alert(c);
+	}
+</script>

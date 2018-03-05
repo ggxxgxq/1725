@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text"  id="txt" value="请输入"/><span id="s"></span>
+	</body>
+</html>
+<script>
+	oTXT = document.getElementById("txt");
+	oSpan = document.getElementById("s");
+	oTXT.onfocus =function(){
+		oTXT.value="";
+	}
+	oTXT.onblur =function(){
+		var cont = oTXT.value;
+		if(cont==""){
+			oSpan.innerHTML="内容不能为空";
+			oSpan.style.color="red";
+		}else if(isNaN(cont)){
+			oSpan.innerHTML="不合法,必须是数字";
+			oSpan.style.color="red";
+		}else if(cont.length<6){
+			oSpan.innerHTML="长度不少于6";
+			oSpan.style.color="red";
+		}else{
+			oSpan.innerHTML="正确";
+			oSpan.style.color="green";
+		}
+	}
+</script>

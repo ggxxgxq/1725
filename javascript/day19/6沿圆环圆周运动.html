@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#circle{
+			width:500px;
+			height: 500px;
+			border:1px solid red;
+			border-radius: 50%;
+			position: absolute;
+			left: 500px;
+			top:100px;
+		}
+		#ball{
+			width: 30px;
+			height: 30px;
+			background: red;
+			position: absolute;
+			left: 500px;
+			top: 100px;
+			border-radius: 50%;
+		}
+	</style>
+	<body>
+	    <div id="circle"></div>
+		<div id="ball"></div>
+	</body>
+</html>
+<script>
+	var circle =document.getElementById("circle");
+	var ball = document.getElementById("ball");
+	var r =250;
+	var deg =90;
+	var centerPoint = {
+		x : circle.offsetLeft + circle.offsetWidth/2,
+		y : circle.offsetTop + circle.offsetHeight/2
+	}
+	
+	var timer = setInterval(function(){//弧度=角度*Math.PI/180
+		
+		ball.style.left = centerPoint.x + r*Math.cos(deg*Math.PI/180)- ball.offsetWidth/2 + "PX";
+		ball.style.top =  centerPoint.y - r*Math.sin(deg*Math.PI/180)- ball.offsetHeight/2 +"PX";
+		deg +=2;
+	},30)
+</script>

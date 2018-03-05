@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*var [x,y]=[1,2]
+	alert(x);
+	alert(y);*/
+	/*var {a,b} ={"a":10,"b":20} //json的赋值方式  变量要和json的键相对应  但是a b为变量 定义多个变量 一一对应就行
+	alert(a)*/
+	
+	//可以让一个函数返回多个值、
+	function fn(){
+		return[1,2,4]
+	}
+	//一般  var arr来接收 return返回的值  就是为数组
+	var [a,b,c] =fn();
+	//alert(b)    alert(a)
+ 	
+ 	
+ 	//定义一个函数 返回m--n之间的素数个数并计算素数和
+ 	  function fn(m,n){
+ 	  	var count =0;
+ 	  	var sum=0;
+ 	  	if(m>n){
+ 	  	   [m,n]=[n,m]
+ 	  	}
+ 	  	for(var i=m;i<n;i++){
+ 	  		if(isPrimerNumber(i)){
+ 	  			count++;
+ 	  			sum +=i;
+ 	  		}
+ 	  	}
+ 	  	return[count,sum]
+ 	  }
+ 	alert(fn(2,4));
+ 	//函数功能判断num是不是一个素数   
+	//如果是素数 就返回true 否则返回false
+	function isPrimerNumber(num){
+		for( var i = 2 ; i < num ; i++ ){
+			if( num % i == 0 ){ //说明不是素数
+				return false;
+			}
+		}
+		return true;//是素数
+	}
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>贪吃蛇</title>
+	<style>
+	*{ margin: 0; padding:0; }
+	li{ list-style: none; }
+	#main{ margin:20px auto; position: relative; }
+	#gird{ border:1px black solid; border-bottom: none; border-right: none; overflow: hidden; }
+	#gird li{ border:1px black solid; border-left: none; border-top: none; float: left; }
+	#gameScore{ float:right; }
+	#snake{}
+	#snake .snakeHead{ background:red; position: absolute; }
+	#snake .snakeBody{ background:red; opacity: 0.5; position: absolute; }
+	#food{ background:blue; position: absolute; }
+	</style>
+</head>
+<body>
+	<div id="main">
+		<ul id="gird">
+			
+		</ul>
+		<input type="button" value="开始" id="gameButton">
+		<div id="gameScore">积分：0</div>
+		<div id="snake">
+			<!-- <div class="snakeHead"></div>
+			<div class="snakeBody"></div>
+			<div class="snakeBody"></div>
+			<div class="snakeBody"></div>
+			<div class="snakeBody"></div> -->
+		</div>
+		<!-- <div id="food"></div> -->
+	</div>
+</body>
+</html>

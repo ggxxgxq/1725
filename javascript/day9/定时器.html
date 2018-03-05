@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="开始" id="t1"/>
+		<input type="button" value="停止" id="t2"/>
+		<div id="d" style="width:100px;height:100px;border:1px solid red;"></div>
+	</body>
+</html>
+<script>
+	var oStart = document.getElementById("t1");
+	var oEnd = document.getElementById("t2");
+	var oDiv = document.getElementById("d");
+	oStart.onclick=function(){
+		 Timer = setTimeout(function(){
+			oDiv.style.display= "none";
+		},3000);
+	}
+	oEnd.onclick=function(){
+		clearTimeout(Timer);
+	}
+</script>

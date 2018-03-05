@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width: 100px;
+			height: 100px;
+			background: skyblue;
+			margin: 200px;
+			opacity: .3;
+		}
+ 
+	</style>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script>
+	var oDiv =document.getElementById("box");
+	var timer =null;
+	oDiv.onmouseover=function(){
+		change(100);
+	}
+	oDiv.onmouseout=function(){
+		change(30);
+	}
+	var alpah =30;
+	function change(target){
+		clearInterval(timer);
+		timer =setInterval(function(){
+			var speed = target-alpah>0 ? 1: -1;
+			if(oDiv.style.opacity==target){
+				clearInterval(timer);
+			}else{
+			alpah =alpah+speed;
+				oDiv.style.opacity = alpah/100;
+			}
+		},30)
+	}
+</script>

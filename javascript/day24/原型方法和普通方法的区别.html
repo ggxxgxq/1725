@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var arr=[1,2,4,5,3,6]
+	var arr1=[7,2,3,4,5,6]
+	arr.sum=function(){
+		/*var sum=0;
+		for(var i=0;i<this.length;i++){
+			sum +=this[i];
+		}*/
+		return 4;//优先级 高
+	}
+	Array.prototype.sum =function(){
+		var sum=0;
+		for(var i=0;i<this.length;i++){
+			sum +=this[i];
+		}
+		return sum; //优先级低
+	}
+	alert(arr.sum())
+	//alert(arr.sum());
+	//alert(arr1.sum())
+</script>

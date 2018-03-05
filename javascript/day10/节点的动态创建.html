@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+		.hh{
+			color:red;
+			background-color:skyblue;
+		}
+	</style>
+	</head>
+	<body>
+		<input type="button" value="创建段落" id="btn" />
+		<p class="hh">原有的段落</p>
+		<p class="hh">原有的段落</p>
+		<p class="hh">原有的段落</p>
+		<p class="hh">原有的段落</p>
+	</body>
+</html>
+<script>
+	var oBtn = document.querySelector("#btn");
+	oBtn.onclick =function(){
+		var oPs =document.createElement("p");
+		oPs.innerHTML="我是一个段落";
+	    document.body.appendChild( oPs );
+	    oPs.className="hh";
+	    
+	    oP=document.getElementsByTagName("p");
+	    for(var i=0;i<oP.length;i++){
+	    	
+	    oP[i].onclick = function(){
+	    	this.style.fontSize="20PX";
+	    }
+	  }
+	}
+</script>

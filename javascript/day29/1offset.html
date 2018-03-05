@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#parent{
+			width: 400px;
+			height: 400px;
+			background: skyblue;
+			/*position: relative;
+			margin: 300px;*/
+		}
+		#son{
+			width: 200px;
+			height: 200px;
+			background: red;
+			position:absolute;
+			left:500px;
+			top: 600px;
+		}
+	</style>
+	<body>
+		<div id="parent">
+			<div id="son"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	console.log( $("#son").position().left);
+</script>

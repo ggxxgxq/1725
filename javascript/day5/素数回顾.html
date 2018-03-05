@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*判断任意一个数是不是素数*/
+   /*var num = parseInt ( prompt("请输入一个数字") );
+   for(var i=2;i<num;i++){
+       if( num%i == 0){
+       	  alert(num + "这个数不是素数");
+       	  break;
+       }
+   }
+   if(i==num){
+   	 alert(num +"这个数是素数");
+   }*/
+   //输出100-- 200之间的素数
+   //低级函数
+ /*  function PrimeNumber(num){
+   	for(var i=2;i<num;i++){
+   	   var num;
+       if( num%i == 0){
+       	 console.log(num +"这个数不是素数");
+       	  break;
+       }
+   }
+   if(i==num){
+   	 console.log(num +"这个数是素数");
+   }
+ }*/
+   /*//高级
+   function PrimeNumber(num){
+   	for(var i=2;i<num;i++){
+   	   var flag =true;
+       if( num%i == 0){
+       	 flag=false;
+       	  break;
+       }
+   }
+   if(flag){
+   	 console.log(num +"这个数是素数");
+   }
+  }
+   PrimeNumber(3)*/
+  //最高级
+/*  function IsPrimeNumber(num){
+   	for(var i=2;i<num;i++){
+       if( num%i == 0){
+       	 return false;
+       	  break;
+       }
+   }
+   if(true){
+   	 console.log(num +"这个数是素数");
+   }
+  }*/
+  
+  function IsPrimeNumber(num){
+   	for(var i=2;i<num;i++){
+       if( num%i == 0){
+       	 return false;
+       }
+   }
+       return true;
+   }
+   
+   
+  function removeNumber(){
+  	
+  for(i=1;i<=50;i++){
+  	if(IsPrimeNumber(i) && IsPrimeNumber(100-i)){
+  		console.log("100以内可以拆成"+i+"和"+(100-i)+"的素数")
+  	}
+  }
+ }
+  removeNumber()
+</script>

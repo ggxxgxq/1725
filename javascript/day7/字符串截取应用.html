@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	// “adgjk”   c   -- > "acdgjk"  
+	function addChar(str,ch){
+		for(var i=0;i<str.length;i++){
+		    //找到ch的位置  
+		// 从ch位置处开始截取 preStr   nextStr 
+		//  截取后  拼接  	
+		    if(str.charAt(i)>ch){
+		    	var prestr=str.substr(0,i);
+		    	var nextstr=str.substring(i);
+		    	break;
+		    }
+		 }
+		    if(ch==str.length){
+		    	return str+ch
+		    }else{
+		    	return prestr + ch + nextstr;
+		}
+	}
+	alert( addChar( "acdgjk" , "e" ) );
+</script>

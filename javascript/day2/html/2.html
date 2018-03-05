@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var wei =Number (prompt("请输入您的体重(KG)"));
+	var hei =Number (prompt("请输入您的身高(m)"));
+	var BMI =wei/(hei*hei);
+	if(BMI<19){
+		alert("您的体重过轻");
+	}else if(BMI>=19 && BMI<25){
+		alert("您的体重正常");
+	}else if(BMI>=25 && BMI<28){
+		alert("您的体重过重");
+	}else if(BMI>=28 && BMI<32){
+		alert("您的体重肥胖");
+	}else if(BMI>=32){
+		alert("您的体重非常肥胖");
+	}else{
+		alert();
+	}
+</script>

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		用户名：<input type="text" id="uname"/>
+		密码：<input type="text" id="pwd"/>
+		<input type="button" id="btn" value="保存"/>
+	</body>
+</html>
+<script>
+	var uname=document.getElementById("uname").value;
+	var pwd =document.getElementById("pwd").value;
+	document.cookie="用户名="+uname+"密码="+pwd;
+</script>

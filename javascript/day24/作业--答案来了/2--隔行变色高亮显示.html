@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>兄弟多个1</li>
+			<li>兄弟多个2</li>
+			<li>兄弟多个3</li>
+			<li>兄弟多个4</li>
+			<li>兄弟多个5</li>
+		</ul>
+	</body>
+</html>
+<script type="text/javascript">
+	/*
+	确定构造函数 ：  HighLight 
+	确定属性 ： 要操作的元素   5个li
+	确定具体功能 （在构造函数上new出来的对象的具体的功能） ：  颜色设置            鼠标操作      加载 隔行颜色变色
+	 */
+	window.onload = function(){
+		new HighLight().init()
+	}
+	function HighLight(){
+		this.list = document.getElementsByTagName("li");
+		this.init =function(){
+			var that = this;
+			for(var i=0;i<this.list.length;i++){
+				if(i%2){
+					this.setColor(this.list[i],"pink")
+				}else{
+					this.setColor(this.list[i],"orange")					
+				}
+				this.list[i].onmouseover = function(){
+					that.color = that.setColor(this);
+					that.setColor(this,"skyblue")
+				}
+				this.list[i].onmouseout = function(){
+					that.setColor(this,that.color);
+				}
+			}
+		}
+		this.setColor = function(obj,color){
+			if(color){
+				obj.style.background = color;
+			}
+			return obj.style.background;
+		}
+	}
+</script>

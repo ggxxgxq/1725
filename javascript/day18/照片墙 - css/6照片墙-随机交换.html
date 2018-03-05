@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html><head><meta charset="UTF-8"/>
+
+<title>照片墙一多实例演示（面向对象版）</title>
+<style type="text/css">
+body,div,h2,ul,li{margin:0;padding:0;}
+body{font:12px/1.5 Arail;}
+.box{width:860px;margin:10px auto;background:#eee;border:1px solid #b8b8b8; height: }
+.title{height:30px;line-height:30px;font-size:14px;padding:0 15px 0 35px;border-bottom:1px solid #b8b8b8;background:#fafafa 5px 50% no-repeat;}
+.title span{float:left;}
+.title a{float:right;color:#06f;outline:none;}
+.title a:hover{color:red;}
+.box ul{width:660px;position: relative; height: 400px;margin: 10px auto;/*display:inline-block;*/ padding:0 15px 15px 0;}
+.box li{float:left;width:140px;height:105px;padding:6px;background:#fff;border:1px solid #c3c3c3;display:inline;margin:15px 0 0 15px;list-style:none;}
+.box li img{float:left;width:140px;height:105px;}
+.box li.hig{padding:5px;border:2px dashed #f30;opacity:0.5;filter:alpha(opacity=50);}
+</style>
+<script src="sport6.js"></script>
+</head>
+<body>
+<div class="box" style="">
+    <h2 class="title"><span>一堆90后</span><a href="javascript:;" class="order" id="order">随机排序</a></h2>
+    <ul id="ul1">
+		<li><img src="imgs/1.jpg" alt="" /></li>
+		<li><img src="imgs/2.jpg" alt="" /></li>
+		<li><img src="imgs/3.jpg" alt="" /></li>
+		<li><img src="imgs/4.jpg" alt="" /></li>
+		<li><img src="imgs/5.jpg" alt="" /></li>
+		<li><img src="imgs/6.jpg" alt="" /></li>
+		<li><img src="imgs/7.jpg" alt="" /></li>
+		<li><img src="imgs/8.jpg" alt="" /></li>
+		<li><img src="imgs/9.jpg" alt="" /></li>
+    </ul>
+</div>
+</body></html>
+<script src="../../public.js"></script>
+<script>
+	/*
+	 因为每一张图片都可以拖拽，每一张图片都有定位 
+	在定位每一张图片之前  先将每一张图片的offsetLeft 和  offsetTop值存入到数组中   
+	 */
+	//1  定位 9张图片   9个li
+	var arr = [];
+	var list = document.getElementsByTagName("li");
+	var zindex = 1;
+	//先取出9个li的坐标位置  相对于ul的
+	for( var i = 0 ; i < list.length ; i++ ){
+		arr.push( { "left" :list[i].offsetLeft , "top":list[i].offsetTop } );
+	}
+	//根据数组中的数据  定位每一个li
+	for( var i = 0 ; i < list.length ; i++ ){
+		list[i].style.position = "absolute";
+		list[i].style.left = arr[i].left + "px";
+		list[i].style.top = arr[i].top + "px";
+		list[i].style.margin = 0;
+	}
+	
+	
+	for( var i = 0 ; i < list.length ; i++ ){
+		//为每一个li添加一个index下标属性  记录下标  通过这个下标就能取出数组中的数据
+		list[i].index = i;
+		drag( list[i] );
+	}
+	//2  让每一张图片都可以拖拽
+	function drag(obj){
+		obj.onmousedown = function(e){
+			console.log( this.index )
+			this.style.zIndex = ++zindex;//调整当前操作的li的层级最高
+			var e = e || event;
+			var disx = e.pageX - obj.offsetLeft;
+			var disy = e.pageY - obj.offsetTop;
+			document.onmousemove = function(e){
+				var e = e || event;
+				var x = e.pageX -  disx;
+				var y = e.pageY - disy;
+				obj.style.left = x + "px";
+				obj.style.top = y + "px";
+				
+				//3  当前拖拽的图片和其余图片碰撞后    改变被碰撞的图片的边框（确认当前拖拽的图片碰到了哪些图片上）
+				/*for( var i = 0 ; i < list.length ; i++ ){
+					if( pz( obj , list[i] ) && obj != list[i]  ){//排除obj自身的边框
+						list[i].style.border = "2px solid red";
+					}else{
+						list[i].style.border = "";
+					}
+				}*/
+				//清空所有的li表格   留下离obj最近的
+				for( var i = 0 ; i < list.length ; i++ ){
+					list[i].style.border = "";
+				}
+				//找离当前拖拽的obj最近的li  设置边框  其余没有
+				var nli = nearLi(obj);
+				if( nli ){
+					nli.style.border = "2px solid red";
+				}
+				
+			}
+			document.onmouseup = function(){
+				document.onmousemove = null;
+				
+				//鼠标抬起  判断是否存在最近的 li  如果存在 就将obj的位置和li的位置交换  否则就将obj恢复到原来的位置
+				var n1 = nearLi(obj);
+				if( n1 ){ //交换坐标
+					startMove( obj , { left:arr[n1.index].left ,top : arr[n1.index].top } );
+					startMove( n1 , { left:arr[obj.index].left ,top : arr[obj.index].top } );
+					
+					//清空n1的边框
+					n1.style.border = "";
+					
+					//交换下标
+					[n1.index,obj.index] = [obj.index,n1.index]
+				}else{
+					startMove( obj , { left:arr[obj.index].left ,top : arr[obj.index].top } );
+				}
+			}
+			return false;
+		}
+	}
+	
+	//随机交换
+	$id("order").onclick = function(){
+		var arrIndex = [0,1,2,3,4,5,6,7,8];// 数组中存放的是每一张图片的下标
+		//随机打乱数组中的数据
+		arrIndex.sort(function(){
+			return Math.random()-0.5;
+		})
+		
+		//[1,2,3,0,7,8,4,5,6]
+		//遍历list  让每一个list的位置 变成数组中下标对应的list的位置
+		for( var i = 0 ; i < list.length ; i++ ){
+			startMove( list[i],  {left: arr[ arrIndex[i] ].left , top : arr[ arrIndex[i] ].top} );
+			list[i].index = arrIndex[i];
+		}
+	}
+	
+	
+	//根据勾股定理确定两点之间的距离
+	function gg(obj1,obj2){
+		var a = obj1.offsetLeft - obj2.offsetLeft;
+		var b = obj1.offsetTop - obj2.offsetTop;
+		return Math.sqrt( a*a + b*b );
+	}
+	//查找距离当前拖拽图片最近的li  （这个li和obj碰撞上了）
+	function nearLi(obj){ //参数obj代表拖拽的对象
+		var minValue = 99999;//假设的最小值
+		var minIndex = -1;//假设李obj最近的li的下标   
+		for( var i = 0 ; i < list.length ; i++ ){
+			if( pz( obj , list[i] ) && obj != list[i]  ){//排除obj自身的边框
+				//根据勾股定理得到斜边   obj和list[i]之间的距离
+				c = gg( obj,list[i] );
+				if( c < minValue ){
+					minValue = c;
+					minIndex = i;
+				}
+			}
+		}
+		//循环结束后  如果minIndex的值还是-1   说明obj没有和任何li碰上
+		if( minIndex != -1 ){ //说明碰上了 并且找到了离obj最近的li
+			return list[minIndex];//找到了 离obj最近的li
+		}else{
+			return false;
+		}
+	}
+</script>

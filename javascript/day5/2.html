@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="fir" />
+		<select name="" id="sel">
+			<option value="+" id="sel1">+</option>
+			<option value="-" id="sel2" >-</option>
+			<option value="*" id="sel3">*</option>
+			<option value="/" id="sel4">/</option>
+		</select>
+		<input type="text" id="sec" />
+		<input type="button" id="btn" value="="/>
+		<input type="text" id="sum" />
+		
+	</body>
+</html>
+<script>
+	var oTxtFir =document.getElementById("fir")
+	var oSel =document.getElementById("sel")
+	var oTxtSec =document.getElementById("sec")
+	var oBtn =document.getElementById("btn")
+	var oTxtSum =document.getElementById("sum")
+	
+	
+	
+	/*oSel.onclick =function(){
+		var sign=document.getElementById("sel").value;
+		var flag=0;
+		if(sign=="+"){
+			flag=1;
+		}else if(sign=="-"){
+			flag=2;
+		}else if(sign=="*"){
+			flag=3;
+		}else{
+			flag=4;
+		}
+		return flag;
+	}*/
+	   
+	oBtn.onclick = function(){
+		var res;
+		var cont =oSel.value;
+	    var num1 =oTxtFir.value;
+	    var num2 =oTxtSec.value;
+		
+		if(cont =="+"){
+			res = parseInt(num1)+parseInt(num2);
+		}else if(cont =="-"){
+			res = num1-num2;
+			
+		}else if(cont =="*"){
+			res = num1*num2;
+			
+		}else if(cont =="/"){
+			res = num1/num2;
+			
+		}
+		/*return res;*/
+		
+	oTxtSum.value = res;
+	}
+</script>

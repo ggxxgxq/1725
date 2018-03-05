@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		主窗口
+		<input type="button" id="btn" value="操作子窗口"/>
+	</body>
+</html>
+<script>
+	var subWin = open("sub.html","_blank","width=300,height=300,left=200,top=100")
+	var oBtn =document.getElementById("btn")
+	oBtn.onclick =function(){
+		subWin.document.body.style.backgroundColor ="pink";
+		subWin.focus();
+	}
+	onunload=function(){
+		if(!subWin.closed){
+			subWin.close();
+		}
+
+	}
+</script>

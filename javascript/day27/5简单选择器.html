@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.min.js"></script>
+	</head>
+	<body>
+		<ul>
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+			<li>孩子多个6</li>
+		</ul>
+		<div id="box">
+			<div>
+				<p>孩子多个1</p>
+				<p id="pp">孩子多个2</p>
+				<p>孩子多个3</p>
+				<span>888888888</span>
+			</div>
+			<p>孩子多个4</p>
+			<p>孩子多个5</p>
+		</div>
+		<p>孩子多个6</p>
+		<p>孩子多个7</p>
+	</body>
+</html>
+<script>
+	for(var i=0;i<$("li").size();i++){		
+		if(i%2){
+			$("li").eq(i).css("background","teal");
+		}else{
+			$("li").eq(i).css("background","red");
+		}
+	}
+	//$("#box").find("p").css("background","palegreen")
+	//$("#box").children("p").css("background","orange")
+	//$("#box").next().css("background","orange")
+	$("#pp").siblings("p").css("background","orange")
+</script>

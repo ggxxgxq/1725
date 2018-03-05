@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		li{
+			list-style: none;
+			float: left;
+			text-align: center;
+		}
+	</style>
+	<body>
+		<ul id="u">
+			<!--<li><img src="a.jpg"/><p>小米</p></li>-->
+		</ul>
+	</body>
+</html>
+<script>
+	var jsonObj = {
+		"info":[
+					{"src":"a.jpg","name":"小米"},
+					{"src":"b.jpg","name":"大米"},
+					{"src":"c.jpg","name":"高粱米"}
+				]
+	}
+	var oU =document.getElementById("u");
+	for(var i=0;i< jsonObj["info"].length;i++){
+		var item = jsonObj["info"][i];
+		oU.innerHTML += '<li><img src="'+item.src+'" alt="" /><p>'+item.name+'</p></li>'
+	}
+	oU.onmouseover = function(e){
+		var e=e ||event;
+        if(e.target.nodeName ="LI"){
+        	e.target.children[0].style.border="1px solid #f00";
+        	e.target.children[1].style.background ="orange";
+        }
+	}
+	oU.onmouseout = function(e){
+		var e=e ||event;
+        if(e.target.nodeName ="LI"){
+        	e.target.children[0].style.border="";
+        	e.target.children[1].style.background ="";
+        }
+	}
+</script>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//创建10猫   10只狗   ，放到一个数组中  ， （顺序任意存放）       
+	//遍历数组  输出 如果是猫，输出叫声 ：  喵喵
+	//		          如果是狗 ，输出叫声：  汪汪
+	/*function Dog(name,voice){
+		this.name=name;
+		this.voice=voice;
+	}
+	function Cat(name,voice){
+		this.name=name;
+		this.voice=voice;
+	}*/
+	function Animal(name,voice){
+		this.name=name;
+		this.voice=voice;
+	}
+	var dog =new Animal("狗","汪汪")
+	var cat =new Animal("猫","喵喵")
+	var arr=[];
+	for(var i=0;i<20;i++){
+		//arr[i]=new Dog("狗","汪汪")
+		//arr[++i]=new Cat("猫","喵喵");
+		arr[i] =dog;
+		arr[++i] =cat;
+	}
+	for(var i=0;i<20;i++){
+		console.log("名字"+arr[i].name+"叫声"+arr[i].voice);
+	}
+</script>

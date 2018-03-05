@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>放烟花效果</title>
+		<style type="text/css">
+			html,
+			body {
+				overflow: hidden;
+			}
+			
+			body {
+				background: #000;
+			}
+			
+			.fire {
+				width: 3px;
+				height: 3px;
+				background: white;
+				position: absolute;
+			}
+			
+			.spark {
+				position: absolute;
+				width: 6px;
+				height: 6px;
+			}
+		</style>
+<script src="../../out.js"></script>
+<script src="../../sport5.js"></script>
+
+	</head>
+
+	<body>
+	</body>
+
+</html>
+<script type="text/javascript">
+	
+	    document.onclick=function(e){
+	    	var e = e || event;
+	    	new CreateFire({x:e.pageX,y: e.pageY}).init().move();
+	    }
+
+	function CreateFire(pos){
+		this.fire = createEle("div");
+		this.pos = pos;
+		this.init = function(e){
+			var that = this;
+			this.fire.className="fire";
+			this.fire.style.left =this.pos.x  + "px";
+			this.fire.style.top  = window.innerHeight-100+"px"; 
+			document.body.appendChild(this.fire);
+			return this;
+		}
+		this.move = function(){
+			startMove(this.fire,{top:this.pos.y},function(){
+				this.fire.remove();
+				this.explode();
+			}.bind(this));			
+		}
+		this.explode =function(){
+			this.count = rand(50,80)
+			for(var i=0;i<this.count;i++){				
+				new Spark(this.pos).init().move();
+			}
+		}
+	}
+	
+	function Spark(pos){
+		this.div = createEle("div");
+		this.pos = pos;
+		this.init =function(){
+			document.body.appendChild(this.div);
+			this.div.className = "spark";
+			this.div.style.left = this.pos.x + "px";
+			this.div.style.top = this.pos.y + "px";
+			this.div.style.background = getColor();
+			return this;
+		}
+		this.move = function(){
+			this.speedx = rand(1,7)*(Math.random()>0.5 ? 1 : -1);
+			this.speedy = rand(1,7)*(Math.random()>0.5 ? 1 : -1);
+			this.timer = setInterval(function(){
+				this.div.style.left = this.div.offsetLeft + this.speedx + "px";
+				this.div.style.top = this.div.offsetTop + this.speedy++ + "px";
+				if(this.div.offsetTop>window.innerHeight ){
+					clearInterval(this.timer);
+					this.div.remove();
+				}
+			}.bind(this),30)
+		}
+	}
+</script>

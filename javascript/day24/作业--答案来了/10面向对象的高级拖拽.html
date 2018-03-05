@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="button" value="创建div" id = "btn" />
+	</body>
+</html>
+<script src="../../out.js"></script>
+<script type="text/javascript">
+	/*
+	 构造函数 ： DragDiv 
+	属性 ： div--动态创建
+	方法 ： 
+		拖拽功能  ： -- down  move   up
+		入口方法 ：创建div
+	 */
+	//点击按钮的时  创建一个div对象
+	$id("btn").onclick = function(){
+		new DragDiv().init();
+	}
+	function DragDiv(){
+		this.div = createEle("div");
+		this.init = function(){
+			document.body.appendChild(this.div);
+			this.div.style.width = this.div.style.height = "50px";
+			this.div.style.position = "absolute";
+			this.div.style.left = rand(0,1000)+ "px";
+			this.div.style.top = rand(0,800) + "px";
+			this.div.style.background = getColor();
+			this.drag();
+		}
+		this.drag = function(){
+			var that =this;
+			this.div.onmousedown = function(e){
+				var e = e || event;
+				that.fnDown(e);
+				document.onmousemove = function(e){
+					var e = e || event;
+					that.fnMove(e);
+				}
+				document.onmouseup = function(){
+					that.fnUp();
+				}
+			}
+		}
+		this.fnDown =function(e){
+			this.disx = e.pageX - this.div.offsetLeft;
+			this.disy = e.pageY - this.div.offsetTop;
+		}
+		this.fnMove = function(e){
+			this.div.style.left = e.pageX - this.disx + "px";
+			this.div.style.top = e.pageY - this.disy + "px";
+			
+		}
+		this.fnUp = function(){
+			document.onmousemove =null;
+		}
+	}
+</script>

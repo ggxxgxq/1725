@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//选择排序
+	function mySort(arr){
+		for(var i=0;i<arr.length-1;i++){
+			for(var j=i+1;j<=arr.length-1;j++){
+			    if(arr[i] >arr[j]){  //让每次循环的第一个arr[i]和后面循环的arr[j]作比较
+			    	var t=arr[i];
+			    	arr[i]=arr[j];
+			    	arr[j]=t;
+			    }
+			}
+		}
+		return arr
+	}
+	var arr = [34,2,67,5,90,78];
+	mySort(arr)
+	alert(arr)
+</script>

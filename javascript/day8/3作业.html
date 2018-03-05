@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="6.jpg" alt="" />
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	//五张图片在同一位置不停的切换
+	var oImg = document.getElementsByTagName("img")[0];
+	 var arr=["6.jpg","7.jpg","8.jpg","9.jpg"]
+	 	var index=0;
+	 setInterval(function(){
+	 	index++;
+	 	oImg.src=arr[index];
+	 	if(index==arr.length-1){
+	 		index=-1;
+	 	}
+	 },1000)
+</script>

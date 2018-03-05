@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul>
+			<li>孩子多个1</li>
+			<li>孩子多个2</li>
+			<li>孩子多个3</li>
+			<li>孩子多个4</li>
+			<li>孩子多个5</li>
+		</ul>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	//页面加载后   为每一个li设置不同的背景颜色   
+	// 鼠标移入到某个li上该li变色，鼠标离开时颜色恢复
+	var list = document.getElementsByTagName("li");
+	for(var i=0;i<list.length;i++){	
+	    list[i].style.backgroundColor=getColor();
+	    //为5个li添加鼠标移入和移出事件
+	   list[i].onmouseover=function(){
+	   	   color = this.style.backgroundColor;
+	   	   this.style.backgroundColor="red";
+	   }
+	   list[i].onmouseout=function(){
+	   	   this.style.backgroundColor = color;	
+	   }
+	}
+</script>

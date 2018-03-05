@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+		body {
+			position: relative;
+		}
+		p {
+			padding: 20px;
+			margin-right: 20px;
+		}
+		#box {
+			width: 100px;
+			height: 100px;
+			border: 5px solid black;
+			margin-left: 20px;
+		}
+		#mask {
+			position: fixed;
+			height:100%;
+			width: 100%;
+			background: rgba(0, 0, 0, 0.4);
+			display: none;
+		}
+		#setting {
+			width: 350px;
+			height: 300px;
+			border: 10px solid gray;
+			background: white;
+			position: absolute;
+			bottom: 0;
+			right: 0;
+		}
+		.options {
+			padding: 20px;
+		}
+		.options span {
+			display: inline-block;
+			border: 1px solid black;
+			padding: 5px;
+			margin-left: 10px;
+			cursor: pointer;
+		}
+		#bgRed {
+			background: red;
+		}
+		#bgYellow {
+			background: yellow;
+		}
+		#bgGreen {
+			background: green;
+		}
+		.last {
+			text-align: center;
+		}
+	</style>
+	<script>
+		 
+	</script>
+</head>
+<body>
+	<div id="mask">
+		<div id="setting">
+		<div class="options">
+			选择背景：
+			<span id="bgRed">red</span>
+			<span id="bgYellow">yellow</span>
+			<span id="bgGreen">green</span>
+		</div>
+		<div class="options">
+			选择宽度：
+			<span id="width200">200</span>
+			<span id="width300">300</span>
+			<span id="width400">400</span>
+		</div>
+		<div class="options">
+			选择高度：
+			<span id="height200">200</span>
+			<span id="height300">300</span>
+			<span id="height400">400</span>
+		</div>
+		<div class="options last">
+			<span id="reset">恢复</span>
+			<span id="ok">确定</span>
+		</div>
+	</div>
+	</div>
+	<p>请为下面的div设置样式：<input id="set" type="button" value="点击设置样式"></p>
+	<div id="box"></div>
+</body>
+</html>
+<script src="out.js"></script>
+<script>
+    $id("set").onclick = function(){
+    	$id("mask").style.display="block";
+    	var oPs = document.getElementsByClassName("options");
+    	var Colors = oPs[0].getElementsByTagName("span");
+    	for(var i=0;i<Colors.length;i++){
+    		Colors[i].onclick =function(){
+    		$id("box").style.backgroundColor=this.innerHTML;
+    		}
+    	}
+    	var width = oPs[1].getElementsByTagName("span");
+    	for(var i=0;i<width.length;i++){
+    		width[i].onclick =function(){
+    		$id("box").style.width=this.innerHTML+"px";
+    		}
+    	}
+    	var height = oPs[2].getElementsByTagName("span");
+    	for(var i=0;i<height.length;i++){
+    		height[i].onclick =function(){
+    		$id("box").style.height=this.innerHTML+"px";
+    		}
+    	}
+    	$id("reset").onclick =function(){
+    		$id("box").style.width=$id("box").style.height=100+"px";
+    		$id("box").style.backgroundColor="#fff";
+    	}
+        $id("ok").onclick =function(){
+        	$id("mask").style.display="none"
+        }
+    }
+</script>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+		#box{
+			width:50px;
+			height:50px;
+			background:skyblue;
+			position:absolute;
+			left:100px;
+			top:200px;
+		}
+		.active{
+			width:5px;
+			height:15px;
+			background:red;
+			position:absolute;
+		}
+	</style>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script>
+	var oBox = document.getElementById("box");
+	document.onkeydown = function(e){
+		var e = e || event;
+		var code = e.keyCode || e.which;
+		switch( code ){
+			case 37:
+				oBox.style.left = oBox.offsetLeft - 10 + "px";
+				break;
+			case 32:
+				var bullet = document.createElement("div");
+				bullet.className = "active";
+				document.body.appendChild(bullet);
+				bullet.style.left = oBox.offsetLeft + oBox.offsetWidth/2-bullet.offsetWidth/2 + "px";
+				bullet.style.top = oBox.offsetTop - bullet.offsetHeight + "px";
+				var timer = setInterval(function(){
+					bullet.style.top = bullet.offsetTop - 3 + "px";
+					if( bullet.offsetTop < -bullet.offsetHeight ){
+						clearInterval(timer);
+						bullet.remove();
+					}
+				},30)
+		}
+	}
+</script>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<style type="text/css">
+		div{
+			width: 100px;
+			height: 100px;
+			background: #0000FF;
+		}
+	</style>
+	<body>
+		<input type="button" value="开始" id="b1"/>
+		<input type="button" value="停止" id="b2"/>
+		<div></div>
+	</body>
+</html>
+<script>
+	$("#b1").click(function(){
+		$("div").animate({"height":400},1500)
+		$("div").animate({"height":100},1500)
+	})
+	$("#b2").click(function(){
+		$("div").stop(true)
+	})
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="http://www.jd.com" id="btn">京东一下</a>
+	</body>
+</html>
+<script>
+	document.oncontextmenu =function(e){
+		var e = e || event;
+		//e.preventDefault ? e.preventDefault(): e.returnValue=true;
+		alert("")
+		return false;
+	}
+	var oBtn =document.getElementById("btn");
+	oBtn.onclick =function(){
+		alert();
+		return false;
+	}
+</script>

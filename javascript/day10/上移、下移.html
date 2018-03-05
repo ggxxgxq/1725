@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table border=1 width=500>
+			<tr>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>
+					<input type="button" value="上移" class="up" />
+					<input type="button" value="下移" class="down" />
+					<input type="button" value="置顶" class="top2" />
+				</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>
+					<input type="button" value="上移" class="up" />
+					<input type="button" value="下移" class="down" />
+					<input type="button" value="置顶" class="top2" />
+				</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>
+					<input type="button" value="上移" class="up" />
+					<input type="button" value="下移" class="down" />
+					<input type="button" value="置顶" class="top2" />
+				</td>
+			</tr>
+			<tr>
+				<td>4</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>
+					<input type="button" value="上移" class="up" />
+					<input type="button" value="下移" class="down" />
+					<input type="button" value="置顶" class="top2" />
+				</td>
+			</tr>
+		</table>
+	</body>
+</html>
+<script>
+	var Ups = document.getElementsByClassName("up");
+	var Downs = document.getElementsByClassName("down");
+	var Tops = document.getElementsByClassName("top2");
+	var Tab = document.getElementsByTagName("table")[0];
+	for(var i=0;i<Ups.length;i++){
+		Ups[i].onclick = function(){
+			if(this.parentNode.parentNode.previousElementSibling ){				
+				Tab.children[0].insertBefore(this.parentNode.parentNode,this.parentNode.parentNode.previousElementSibling);
+			}
+		}
+		
+	}
+	for(var i=0;i<Downs.length;i++){
+		Downs[i].onclick = function(){
+			if(this.parentNode.parentNode.nextElementSibling ){				
+				Tab.children[0].insertBefore(this.parentNode.parentNode,this.parentNode.parentNode.nextElementSibling.nextElementSibling)
+			}
+		}
+		
+	}
+	for(var i=0;i<Tops.length;i++){
+		Tops[i].onclick = function(){			
+				Tab.children[0].insertBefore(this.parentNode.parentNode,Tab.children[0].children[0]);
+		}
+		
+	}
+</script>

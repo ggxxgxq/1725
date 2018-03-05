@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--用户名：<input type="text" id="txt"/>-->
+		 
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	/*1、	统计字符串中每个字符的个数
+例如： var str = "asfesWsdA";*/
+   /* function getCount(str){
+    	for(var code=0;code<127;code++){
+    		var ch= String.fromCharCode(code) 
+    		var count=0;
+    		for(var i=0;i<str.length;i++){
+    			if(str.charAt(i)==ch){
+    				count++;
+    			}
+    		}
+    		if(count>0){
+    			alert("字符中"+ch+"出现的次数是："+count+"次");
+    		}
+    	}
+    }*/
+   // getCount("sddfdggg%%***##$")
+ /*  2、	已知页面中有个用户名和密码的文本框，一个登录按钮
+当点击登录按钮时，需要对用户名格式进行验证：
+
+要求：   长度在6—20 之间，否则alert提示
+			不能用数字开头    否则有alert提示
+			只能包含数字、字母、下划线，都正确，提示 正确，否则输出 只能包含字母数字下划线*/
+        
+        /*var oTxt=document.getElementById("txt");
+        oTxt.onblur=function(){
+            var strName=oTxt.value;
+        	if(strName.length<6 || strName.length>20 ){
+        		alert("长度必须在6—20 之间");
+        		return;
+        	}
+        	if(strName.charAt(0)>="0" && strName.charAt(0)<="9" ){
+        		alert("不能用数字开头 ");
+        		return;
+        	}
+        	// 只能包含字母、数字、下划线
+		// 计算字符串中字母、数字、下划线的个数count 
+		// 如果 count == strName.length 说明一定没有多余字符存在
+		var count=0;
+		for(var i=0;i<strName.length;i++){
+			var ch = strName.charAt(i);
+			if(strName.charAt(i)>="a" &&ch<="z"||ch>="A" &&ch<="Z" ||ch>="0" &&ch<="9"||ch=="_"){
+				console.log(strName.charAt[i]);
+				count++;
+			}
+		}
+		if(count==strName.length){
+			alert("输入合法")
+		}else{
+			alert("只能包含字母、数字、下划线")
+		}
+    }*/
+ 	}
+</script>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<style>
+			*{margin:0;padding:0;}
+			header{width:400px;height:407px;background:#9cbc2c;margin:30px auto;padding:0 69px;overflow:hidden;}
+			div{width:394px;height:35px;background:#b9d06a;border:3px solid #fff;border-radius:5px;margin:4px 0;line-height:35px;}
+			h3{margin-top:10px;}
+			span{margin-left:15px;margin-right:25px;}
+			input{width:200px;height:20px;}
+			#btn{width:50px;height:50px;background:blue;border:none;border-radius:5px;margin-left:150px;}
+		</style>
+	</head>
+	<body>
+		<header>
+			<h3>Step1:用户详细资料</h3>
+			<div>
+				<span>用户名称：</span>
+				<input type="text" value="请输入用户名"  id="username"/>
+			</div>
+			<div>
+				<span>邮件地址：</span>
+				<input type="email"  value="example@qq.com" id="ema" />
+			</div>
+			<div>
+				<span>联系电话：</span>
+				<input type="text" value="3254545436" id="pho"/>
+			</div>
+			<h3>Step2:家庭地址（收货地址）</h3>
+			<div>
+				<span>详细地址：</span>
+				<input type="text" value="请输入地址" id="add"/>
+			</div>
+			<div>
+				<span>邮政编码：</span>
+				<input type="text" value="154322" id="code" />
+			</div>
+			<div>
+				<span>国&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;家：</span>
+				<input type="text" value="中国" id="cou"/>
+			</div>
+			<input type="submit" id="btn" value="保存"/>
+		</header>
+	</body>
+</html>
+<script>
+	var oTxtUser = document.getElementById("username");
+	var oEma =document.getElementById("ema");
+	var oTxtPho =document.getElementById("pho");
+	var oTxtAdd =document.getElementById("add");
+	var oTxtCode =document.getElementById("code");
+	var oTxtCou =document.getElementById("cou");
+	var oSub =document.getElementById("btn");
+	    oTxtUser.onfocus = function(){
+	    	oTxtUser.value = ""
+	    }
+	    oEma.onfocus = function(){
+	    	oEma.value = ""
+	    }
+	    oTxtPho.onfocus = function(){
+	    	oTxtPho.value = ""
+	    }
+	    oTxtAdd.onfocus = function(){
+	    	oTxtAdd.value = ""
+	    }
+	    oTxtCode.onfocus = function(){
+	    	oTxtCode.value = ""
+	    }
+	    oTxtCou.onfocus = function(){
+	    	oTxtCou.value = ""
+	    }
+	 
+	  oSub.onclick =function(){
+	  	var cont =oTxtUser.value;
+	  	var num =oTxtPho.value;
+	  	if(cont==""){
+	  		alert("用户名不能为空白");
+	  	}
+	  	if(isNaN(num)==true){
+	  		alert("错误，联系电话必须为数字");
+	  	}
+	  }
+</script>
+

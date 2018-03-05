@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	// for循环实现输出 1--100
+	/*for(i=1;i<=100;i++){
+		document.write(i +" ");
+	}*/
+	//for 循环实现输出 1--100的和  1 + 2 + 3 +。。 + 100
+	/*var sum = 0;
+	for(i=1;i<=100;i++){
+		sum +=i
+//		document.write(sum +" ");
+	}
+	document.write(sum +" ");*/
+	
+	//计算1--100之间的偶数和
+	/*var sum = 0;
+	for(i=1;i<=100;i++){
+		if(!(i%2)){
+			sum +=i
+			console.log(i);
+			
+		}			
+	}
+		document.write(sum +" ");*/
+//计算 1 + 1/2 + 1/3 + 1/4 + ... + 1/100
+ /*var sum = 0;
+ for(var i=1; i<=100 ; i++){
+ 	sum += 1/i;
+ }
+// alert(sum);
+   alert(sum.toFixed(2));*/
+  
+  
+   //计算 1 - 1/2 + 1/3 - 1/4 + ... - 1/100
+	// 分母为偶数   加负数   sum -= 1/i;
+	var sum=0;
+	for(var i=1;i<=100;i++){
+		if(!(i%2)){
+			sum -=1/i;
+			
+		}else{
+			sum +=1/i;
+		}console.log(sum);
+	}
+	alert(sum);
+	
+</script>

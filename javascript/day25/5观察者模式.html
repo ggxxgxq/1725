@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Child(dad,mum){
+		this.dad = dad ;
+		this.mum = mum ;
+		this.cry = function(){
+			this.dad.weinai()
+		}
+		setInterval(function(){
+			this.cry()
+		}.bind(this),Math.random()*5000)
+	}
+	function Dad(){
+		this.weinai = function(){
+			alert("孩子哭了，该喂奶了")
+		}
+	}
+	var dd = new Dad();
+	var child = new Child(dd,null)
+</script>

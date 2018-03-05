@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+		<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		#box{
+			width:100px;
+			height: 100px;
+			background: skyblue;
+			position: absolute;
+			left: 100px;
+			top: 100px;
+		}
+	</style>
+	<body>
+		<div id="box"></div>
+	</body>
+</html>
+<script src="../sport3.js"></script>
+<script>
+	var oDiv =document.getElementById("box");
+	oDiv.onmouseover =function(){
+		startMove(oDiv,300,"width",function(){
+		startMove(oDiv,200,"height")
+			
+		})
+	}
+</script>

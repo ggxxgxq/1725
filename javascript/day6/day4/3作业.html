@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="out.js" ></script>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	/*1、	函数实现：输出1—3之间能组成的奇数个数，并输出这些数
+要求 ： 组成的数是一个两位数，个位数！=十位数
+组成： 13  21   23  31  共4个*/
+    function fnNum(){
+    	var oddnum,i,j;
+        var count=0;
+    	for(j=1;j<=3;j++){
+    	for(i=1;i<=3;i++){
+    	    oddnum=10*j+i;
+    		if(oddnum%2 && i!=j ){
+    			document.write(oddnum+" ");
+    			count++;
+    			
+    		}
+    	}
+    }
+    	alert("1—3之间能组成的奇数的个数是"+count)
+ }
+  /* fnNum();*/
+ function fn(n){
+       var n;
+       var sum=0;
+       if( n%2){
+	       for(i=1;i<=n;i+=2){
+	       	   sum +=1/i;
+	       }
+	      
+       }else {
+	       for(i=2;i<=n;i+=2){
+	       	   sum +=1/i;
+	       }
+       }
+       alert(sum);
+    }
+//fn(3);
+
+//fnSort(11,12,8);
+    /*function perfectNum(){
+    	  
+    	for(i=2;i<=10000;i++){
+  	           sum=0;
+    		for(j=1;j<=i-1;j++){
+    			if(i%j==0){
+    				sum +=j;
+    			}		
+    		}
+    		if(i==sum){
+    				console.log(i);
+    			}
+    	}
+    }
+perfectNum();*/
+      /* 3. var a=1;
+        function fn(){    
+            alert(a);
+            a=2;
+        }
+        fn();  //a=1
+        alert(a)  //a=2*/
+
+       4.var a=1;  
+        function fn(a){
+            alert(a);
+            a=2;
+        }
+        fn();   //undefined
+        alert(a);//a=2
+ 
+    
+       /* 5.var a=1;
+        function fn(a){
+            alert(a);
+            a=2;
+        }
+        fn(a);  //2
+        alert(a);//2*/
+
+</script>

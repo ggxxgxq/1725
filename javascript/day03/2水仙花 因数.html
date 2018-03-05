@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	var i=100;	
+	var sum =0;
+	while (i>=100 && i<=999){
+		var a = parseInt(i/100);
+	    var b = parseInt(parseInt(i%100)/10); 
+	    var c = parseInt(i%10); 
+		if(a*a*a + b*b*b + c*c*c == i){
+			document.write(i +" ");
+			sum +=i
+//			console.log(i);
+		}
+		i++;
+	}alert(sum);
+	/*//7的因数是1--7所以给因数一个终值  写到whlie关系表达式里 
+	
+	var Num =parseInt(prompt("请输入一个任意的数"));
+	var i = 1;
+	while (i<=Num){
+		if( Num%i == 0){
+		document.write(i +" ");
+//			console.log(i +" ");
+		}
+		i++;
+	}*/
+</script>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>进度条 </title>	
+	</head>
+	<style>
+		#progress{
+			position: relative;
+			margin: auto;
+			top: 200px;
+			display: block;
+			width: 200px;
+			height: 20px;
+			border-style: dotted;
+			border-width: thin;
+			border-color: darkgreen;
+		}
+		#filldiv{
+			position:absolute;
+			top: 0px;
+			left: 0px;
+			width: 0px;
+			height: 20px;
+			background: blue;
+		}
+		#percent{
+			position: absolute;
+			top: 0px;
+			left: 200px;
+			
+		}
+	</style>
+	<script>
+		
+	</script>
+	<body>
+		<div id="progress">
+			<div id="filldiv"></div>
+			<span id="percent">0</span>
+		</div>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	var timer =setInterval(function(){
+		$id("filldiv").style.width = $id("filldiv").offsetWidth+2+"px";
+		var parcent =100*$id("filldiv").offsetWidth/200;
+		$id("filldiv").style.background = getColor();
+		$id("percent").innerHTML = parcent + "%";
+		if($id("filldiv").offsetWidth==200){
+			clearInterval(timer);
+		}
+	},30)
+	
+</script>

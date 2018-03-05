@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		年：<input type="text" id="y" />
+		月：<input type="text" id="m" />
+		日：<input type="text"  id="d" />
+		结果：<input type="text" id="res" />
+		<input type="button" value="计算" id="btn" /> 
+	</body>
+</html>
+<script>
+/*	var Sco=parseInt (prompt("请输入考试成绩"))
+	if(Sco>=60){
+	  	alert('恭喜，你及格了')
+	  	alert("不要骄傲啊")
+	}else{
+		alert("很遗憾，你没有及格")
+	  	alert("请继续努力啊")
+	}
+	alert("么么哒")*/
+	
+	
+    
+    
+    
+    //要做事   先找人 对象object 
+    var oTxtYear = document.getElementById("y");
+    var oTxtMonth = document.getElementById("m");
+    var oTxtDate = document.getElementById("d");
+    var oTxtRes = document.getElementById("res");
+    var oBtn = document.getElementById("btn");
+    //1 为按钮添加点击事件  onclick
+     oBtn.onclick = function(){
+    //2 获取 年  月  日 
+    var y = oTxtYear.vaule;
+    var m = parseInt ( oTxtMonth.value );
+    var d = parseInt ( oTxtDate.value );
+    //3 程序实现计算这一天是这一年的第几天
+    var sum =0; //实现累加
+    switch (m){
+    	case 12: sum +=30;
+    	case 11: sum +=31;
+    	case 10: sum +=30;
+    	case 9:  sum +=31;
+    	case 8:  sum +=31;
+    	case 7:  sum +=30;
+    	case 6:  sum +=31;
+    	case 5:  sum +=30;
+    	case 4:  sum +=31;
+    	case 3: {
+    		y%4==0 && y%100!=0 || y%400==0 ? sum +=29 : sum +=28;
+    	}
+    	case 2: sum +=31;
+    	case 1: sum +=d;
+    }
+    //4 将结果回填到文本框中
+     oTxtRes.value = sum;
+     }
+</script>

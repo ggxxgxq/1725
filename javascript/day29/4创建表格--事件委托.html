@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery-1.11.1.js"></script>
+	</head>
+	<body>
+		行：<input type="text" id="row"/>
+		列：<input type="text" id="col"/>
+		<input type="button" value="创建表格" id="btn"/>
+		<div id="box"></div>
+	</body>
+</html>
+<script src="../out.js"></script>
+<script>
+	$("#btn").click(function(){
+		//$("#box").empty();
+		$("#box").html("");
+		var rowTxt = $("#row").val();
+		var colTxt = $("#col").val();
+		//创建一个表格标签  
+		$tab = $("<table border='1' width='500'>");
+		for( var i = 0 ; i < rowTxt ; i++ ){
+			$tr = $("<tr>");//动态创建标签
+			for( var j = 0 ; j < colTxt ; j++  ){
+				$td = $("<td>"+rand(1,100)+"</td>");
+				$td.css("background",getColor());
+				$tr.append( $td );
+			}
+			$endTd = $("<td><a class='del' href='javascript:;'>删除</a></td>");
+			$tr.append( $endTd );
+			$tab.append( $tr );
+		}
+		$("#box").append( $tab );
+		
+		/*//为每一个删除按钮添加单击事件
+		$(".del").click(function(){
+			//删除当前行
+			if( confirm("确定要删除么?") ){
+				$(this).parent().parent().remove();
+			}
+		})*/
+	})
+	/*$("#box").delegate(".del","click",function(){
+		if( confirm("确定要删除吗？")){
+			$(this).parent().parent().remove()
+		}
+	})*/
+	$("#box").on("click","a",function(){
+		if( confirm("确定要删除吗？")){
+			$(this).parent().parent().remove()
+		}
+	})
+</script>

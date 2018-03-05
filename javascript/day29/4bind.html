@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<script src="jquery-1.11.1.js"></script>
+	<style type="text/css">
+		 
+	</style>
+	<body>
+		<ul>
+			<li>兄弟多个1</li>
+			<li>兄弟多个2</li>
+			<li>兄弟多个3</li>
+			<li>兄弟多个4</li>
+			<li>兄弟多个5</li>
+		</ul>
+	</body>
+</html>
+<script>
+	/*$("li").bind("click mouseenter",function(){
+		alert("event")
+	})*/
+	$("li").bind({
+		"click":function(){
+			alert("click")
+		},
+		"mouseenter":function(){
+			alert("enter")
+		},
+		"mouseleave":function(){
+			alert("leave")
+		}
+	})
+	$("li").unbind("mouseenter mouseleave")
+</script>

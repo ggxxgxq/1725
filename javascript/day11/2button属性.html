@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	document.oncilck = function(e){
+         //var e = e ||event;
+         alert(getButton(e))
+	}
+	function getButton(evt){
+		var e = evt || event;
+		if(evt){
+			return e.button;
+		}else if(window.event) {
+			switch(e.button){
+				case 1:return 0;
+				case 4:return 1;
+				case 2:return 2;
+			}
+		}
+	}
+	
+	
+	
+	/*document.onmousedown = function(e){
+		//var e = e || event;
+		//alert( e.button );
+		alert( getButton( e ) );
+	}
+	
+	function getButton(evt){  // 事件对象参数
+	    var e = evt || event;  
+	    if( evt ){ // 高版本浏览器
+	        return e.button;
+	    }else if( window.event ){  //ie6
+	        switch(e.button){
+	            case 1 : return 0;
+	            case 4 : return 1;
+	            case 2 : return 2;
+	        }
+	    }
+	}*/
+</script>

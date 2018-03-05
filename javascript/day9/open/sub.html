@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		子窗口
+		<input type="button" value="操作主窗口" id="btn" />
+	</body>
+</html>
+<script>
+	var oBtn =document.getElementById("btn");
+	oBtn.onclick =function(){
+		window.opener.document.body.style.backgroundColor="teal"
+	}
+	
+</script>

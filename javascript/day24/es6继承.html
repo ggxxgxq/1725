@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	class Father{
+		constructor(name,age){
+			this.name = name;
+			this.age = age;
+		}
+		music(){
+			console.log("唱歌")
+		}
+		walk(){
+			console.log("走路")
+		}
+	}
+	
+	//子类继承父类
+	class Son extends Father{
+		constructor(name,age,score){
+		//子类继承父类属性
+		super(name,age);
+		//子类创建独有属性
+		this.score =score;
+		
+		}
+		study(){
+			console.log("学习");
+		}
+	}
+	var son =new Son("小明","12","99");
+	console.log(son);
+</script>

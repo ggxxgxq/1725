@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="checkbox" name="xq" /> 全选
+		<input type="checkbox" name="fq" /> 反选
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+		<input type="checkbox" name="h" /> 
+	</body>
+</html>
+<script>
+	var qx = document.getElementsByName("xq")[0]
+	var fx = document.getElementsByName("fq")[0];
+	var h = document.getElementsByName("h");
+	
+	qx.onclick =function(){
+		for(var i=0;i<h.length;i++){
+			h[i].checked=qx.checked;//用this也可以  就是当前指向
+		}
+	}
+	fx.onclick = function(){
+		for(var i=0;i<h.length;i++){
+		if(h[i].checked){
+			h[i].checked =false;
+		}else{
+			h[i].checked =true;
+		}
+      }
+	}
+</script>
+

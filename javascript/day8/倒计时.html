@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>距您的商品下架还有：</h1>
+		<p id="p1"></p>
+	</body>
+</html>
+<script src="out.js"></script>
+<script>
+	var oP=document.getElementById("p1")
+		var start=new Date();
+		var end=new Date("2017-12-22  17:24:00");
+		var t=diff(start,end)
+	function getTime(){
+		var h = parseInt(t/3600);
+		var m = parseInt((t-h*3600)/60);
+		var s = parseInt(t-h*3600-m*60);
+		oP.innerHTML = h + "小时" + m + "分钟"+s + "秒";
+}
+	getTime();
+	var Time = setInterval(function (){
+		t--;
+		if(t<0){
+			oP.innerHTML="您的商品已过期";
+			clearInterval();
+		}else{
+			
+		getTime();
+		}
+		
+	},1000)
+</script>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Father(name,age){
+		this.name = name;
+		this.age = age;
+		this.sing =function(){
+			console.log("唱歌")
+		}
+		this.dance =function(){
+			console.log("跳舞")
+		}
+	}
+	//call apply改变非匿名函数的this指向
+	//创建子类特有的属性
+	function Son(name,age,score){
+		Father.call(this,name,age)
+		this.score =score;
+		this.study =function(){
+			console.log("学习")
+		}
+	}
+	var s =new Son("小明","18","100");
+	s.sing()
+	s.study()
+	console.log(s);
+</script>

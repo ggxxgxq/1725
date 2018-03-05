@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	//解构赋值还可以作用在函数的参数上 
+	function fn({age,name}){
+		alert(age+","+name);
+	}
+	//fn({"age":16,"name":"jack"})
+	
+	//实现冒泡排序
+	function fn(arr){
+		for(var i=0;i<arr.length-1;i++){
+			for(var j=0;j<arr.length-1-i;j++){
+				if(arr[j]>arr[j+1]){
+					[arr[j],arr[j+1]] = [arr[j+1],arr[j]]
+				}
+			}
+		}
+		alert(arr) ;
+	}
+	fn([33,45,3,6,34,27])
+	
+</script>

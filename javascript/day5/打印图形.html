@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	for(var i=1;i<=6;i++){
+		for(j=1;j<=6-i;j++){
+			document.write("&ensp;")				
+		}
+		for(j=1;j<=2*i-1;j++){
+			if(j==1 || j==2*i-1){		
+			document.write("*")				
+			}else{
+			  document.write("&ensp;")
+			}
+		}
+	    document.write("<br>")
+	}
+	
+	for(var i=1;i<=5;i++){
+		for(j=1;j<=i;j++){
+			document.write("&ensp;")				
+		}
+		for(j=1;j<=11-2*i;j++){
+			if(j==1 || j==11-2*i){		
+			document.write("*")				
+			}else{
+			  document.write("&ensp;")
+			}
+		}
+	    document.write("<br>")
+	}
+	//三角形
+	/*for(i=1;i<=5;i++){
+		for(j=1;j<=i;j++){	
+		document.write('*');
+		}
+		document.write("<br>");
+	}*/
+	
+	for(i=1;i<=10;i++){
+		for(j=1;j<=10;j++){
+			if(j==1 || i==j || i==10){
+				document.write('*');
+			}else{
+				document.write('&ensp;');
+			}
+		}
+		document.write('<br>');
+	}
+</script>

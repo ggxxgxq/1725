@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+	</body>
+</html>
+<script>
+	function Phone(){
+		this.music = function(){
+			console.log("该产品可以播放音乐");
+		}
+		this.call = function(){
+			console.log("该产品可以打电话")
+		}
+	}
+	
+	function Ipad(){
+		this.music = function(){
+			console.log ("该产品可以播放音乐");
+		}
+	}
+	
+	function Adapter(product){
+		this.product = product;
+		this.music = function(){
+			if(this.product.music){
+				console.log("该产品可以放音乐")
+			}else{
+				console.log("该产品不可以听音乐")
+			}
+		}
+		this.call = function(){			
+		    if( this.product.call ){
+				console.log("该产品可以打电话");
+			}else{
+				console.log("该产品不可以打电话");
+			}
+		}
+	}
+	
+	var phone = new Phone();
+	var pad = new Ipad();
+	var ada1 = new Adapter(phone);
+	var ada2 = new Adapter(pad);
+	//ada1.music()
+	//ada2.call();
+	
+	function test(adapter){
+		adapter.music();
+		adapter.call();
+		console.log("测试结束")
+	}
+	test(ada1)
+	test(ada2)
+</script>
